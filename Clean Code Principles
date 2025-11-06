@@ -1,4 +1,5 @@
 # GENERAL DESIGN PRINCIPLES
+
 - DRY (Don't Repeat Yourself)
 - PEP8
 - POLA (Principle of Least Astonishment)
@@ -10,7 +11,14 @@
 = snake_case for functions, PascalCase/UpperCamelCase for class names
 
 ## PYTHON
+
 PEP8 (Python Enhancement Proposal 8)
 - official style guide for Python
 Pylint
 - Use pylint test.py in terminal to check code cleanliness
+Pytest 
+- !pytest filename.py in terminal to check if code works
+Doctest
+- import doctest
+- doctest.testmod() 
+- checks if code after >>> (the Python interactive prompt) matches the output (from lines right after)
