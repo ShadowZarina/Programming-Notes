@@ -1,0 +1,16 @@
+# GENERAL DESIGN PRINCIPLES
+- DRY (Don't Repeat Yourself)
+- PEP8
+- POLA (Principle of Least Astonishment)
+- KISS (eep It Simple, Stupid)
+
+
+- Periodic code reviews
+- Naming conventions 
+= snake_case for functions, PascalCase/UpperCamelCase for class names
+
+## PYTHON
+PEP8 (Python Enhancement Proposal 8)
+- official style guide for Python
+Pylint
+- Use pylint test.py in terminal to check code cleanliness
