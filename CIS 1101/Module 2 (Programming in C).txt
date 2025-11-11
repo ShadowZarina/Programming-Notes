@@ -1,0 +1,196 @@
+VARIABLES
+- named memory location
+- used to store data
+- value of which can be changed, used, or reused
+= Syntax: data_type variable_name;
+
+EXAMPLE:
+
+int x;
+int num;
+
+1 byte = 8 bits
+
+IDENTIFIERS [RULES]
+- can have letters, numbers, underscores
+1. The first character MUST be an alphabetic character or underscore
+2. You cannot use keywords as names (eg. while, if)
+3. C is case-sensitive  (eg. int X is NOT the same as int x)
+4. Names must be unique
+5. Standard-Specific Limits
+-- Internal identifiers (C99/C11, 63 significant characters)
+-- External identifiers (C99/C11, 31 characters)
+-- External identifiers (C89, 6 characters)
+6. No white/blank spaces
+7. No special characters (eg. $,#)
+
+
+DATA TYPES
+1. int
+- variables with numeric/integer values without fractional parts
+2. float
+- variables with numeric values with a fractional part
+3. double
+- variables that can take on numeric values with a fractional part
+- greater size than floats
+4. char
+- variables that store one character at a time
+5. void
+- hold no value
+- void type functions will not return any value
+
+int = 4 bytes
+float = 8 bytes
+double = 8 bytes
+char = 1 byte
+
+When to use float vs double?
+- Float is the default (especially for smaller programs)
+- Double is used for larger quantities
+
+TYPE MODIFIERS
+1. unsigned (always positive)
+- restricts the data type to storing only non-negative (zero and positive) values, effectively doubling the range of positive numbers it can store
+2. signed
+-  allows the data type to hold both positive and negative values. It's the default modifier for integer types
+3. short
+- reduces the storage size of an integer type compared to its default size, thus decreasing the range of values it can hold
+4. long
+- increases the storage size of an integer type, allowing it to hold a larger range of values
+
+
+CONSTANTS
+- fixed value entities that do not change their values throughout program execution
+- CAN'T BE MODIFIED once defined
+- syntax: const data-type identifier-type value;
+
+const vs #define
+- CONST: recommended approach for defining constants in C due to its type safety & scoping benefits
+- #DEFINE: reserved for specific use cases like macros and conditional compilation
+
+
+CHARACTER SET
+1. Source Character Set
+- set of characters that may be used in C source code
+- all letters, digits, and special characters
+2. Execution Character Set
+- any character set with backslashes
+= \a, \', \", \n
+
+
+COMPONENTS OF A PROGRAM
+1. Documentation  (file name, description, author, date, place)
+2. Link  (header files)
+3. Definition  (#define)
+4. Global Declaration  (outside of functions)
+5. Function Prototype Declaration  (declare functions outside of main)
+6. Main Function
+  a. Declaration  (declare variables)
+  b. Executable
+7. User-Defined Function Definition  (create own functions)
+
+
+ARITHMETIC EXPRESSIONS
+- Operator Precedence (applies PEMDAS)
+= *, /, % have higher precedence over + and - 
+- Operator Associativity
+= program goes from left to right (for operators with same precedence)
+
+
+OPERATORS
+1. Unary 
+   -,+,--,++,!, sizeof, typeof
+2. Arithmetic
+  +,-,*,/,%,--,++
+3. Relational
+   <,>, <=, >=, !=, ==
+4. Logical
+   AND (&&), OR (||), and NOT (!)
+5. Bitwise
+   & (AND), | (OR), ^ (XOR), ~ (NOT), << (left shift), and >> (right shift)
+6. Assignment
+   =
+7. Ternary
+   condition ? expression1 : expression2
+
+REFERENCE FOR ALL OPERATOR PRECEDENCE (already in Canvas)
+https://www.codingeek.com/tutorials/c-programming/precedence-and-associativity-of-operators-in-c/
+
+
+OPERATORS PRECEDENCE
+
+1.)  (), [], ++, --
+(LEFT TO RIGHT)
+2.)  ++, --, !, (type), sizeof
+(RIGHT TO LEFT)
+3.)  *, /, %
+(LEFT TO RIGHT (for this one and the ones below))
+4.)  +, -
+5.)  <<, >>
+6.)  <, <=, >, >=
+7.)  ==, !=
+8.)  &, ^, |, &&, ||, ?:
+9.)  =, +=, -=, etc.
+
+
+x++  -> Postfix increment
+= return value then add 1
+++x  -> Prefix increment
+= add 1 then return value
+x+1
+
+++x (Prefix) vs x++ (Postfix)
+- prefix changes BEFORE program operates/outputs
+- postfix changes AFTER
+
+
+-----------
+
+
+CHARACTERS
+
+One char has 1 byte of storage.
+Number of combinations = 2^n where n = number of digits
+
+Example:
+char x; -> 1 byte -> 8 bits
+
+1 bit = 1, 0   -> 2 = 2^1
+2 bits = 11, 10, 01, 00   -> 4 = 2^2
+3 bits = 000, 001, 010, 011, 100, 101, 110, 111  -> 8 = 2^3
+
+Example 2:
+int y; -> unsigned int -> 4 bytes or 32 bits
+
+RANGE:
+Formula: 2^n-1 to ((2^n-1) -1) where n = number of bits 
+
+2^32 / 2^1 = 2^31
+-2^31 to (2^31 - 1)
+
+
+ACTUAL CODING SYNTAX:
+
+scanf
+- Format: scanf("format specifier", ADDRESS of variable);
+printf
+- Format: printf("format specifier, variable);
+
+Syntax vs. Conventions
+- Syntax = rules on how code works
+= Ex. variable names = data_type var_name;
+- Convention = ways to make coding cleaner
+
+
+CONTROL STRUCTURES
+
+Control structures in C manage program execution flow, guiding which code runs and in what order. 
+They are broadly categorized into three main types: 
+1. selection (if-else, switch)
+2. iteration (loops like for, while, do-while)
+3. jump (break, continue, goto)
+
+Sample of Ternary Structure
+
+printf("%s", (score>=20)?"Passed":"Failed");
+-- prints "Passed" if score meets condition, "Failed" if otherwise
