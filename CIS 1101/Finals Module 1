@@ -1,1 +1,20 @@
+# LOOPS
 
+## FOR LOOPS
+
+for (initialization; condition; iteration)
+
+## WHILE LOOPS
+
+int x = 0;   --> INITIALIZATION
+while (x <= 5) {   --> CONDITION
+  printf("Hi\n");
+  x++;   --> ITERATION
+}
+
+## DO-WHILE LOOPS
+
+int x = 1;
+do {
+  printf("Hi\n";
+} while (x < 5);
