@@ -18,3 +18,5 @@ int x = 1;
 do {
   printf("Hi\n";
 } while (x < 5);
+
+# POINTERS
