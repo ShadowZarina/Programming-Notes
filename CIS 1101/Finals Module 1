@@ -52,11 +52,46 @@ int main(){
     scanf("%d", &x);
     printf("Enter the value of y: ");
     scanf("%d", &y);
-    x, y = swap(&x,&y);
+    swap(&x,&y);
     
     printf("%d is x, %d is y", x, y);
     return 0;
 } 
 # PASS THE ADDRESSES OF X AND Y TO THE FUNCTION, THE ACTUAL VARIABLES' VALUES WILL BE ALTERED
+
+### EXAMPLE 2
+
+#include <stdio.h>
+
+/*
+int swap (int *x, int *y) {
+    int z;
+    z = *x; // in other words z = the value of 5
+    *x = *y;
+    *y = z;
+    return *x, *y;
+}
+*/
+
+int main(){
+    int x = 5;
+    int *ptr;
+    ptr = &x;
+    printf("%d", *ptr);
+    printf("\n%p", &ptr);
+    // Use ampersand for address, asterisk for value
+    printf("\n%p", x);
+    printf("\n%p", &x);
+    // %p prints the memory address of a pointer in HEXADECIMAL FORMAT
+    
+    return 0;
+
+/* OUTPUTS */
+5
+0x7ffd19d81720
+0x5
+0x7ffd19d8172c
+}
+
 
 
