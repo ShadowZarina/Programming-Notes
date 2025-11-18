@@ -63,16 +63,6 @@ int main(){
 
 #include <stdio.h>
 
-/*
-int swap (int *x, int *y) {
-    int z;
-    z = *x; // in other words z = the value of 5
-    *x = *y;
-    *y = z;
-    return *x, *y;
-}
-*/
-
 int main(){
     int x = 5;
     int *ptr;
