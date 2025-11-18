@@ -20,3 +20,43 @@ do {
 } while (x < 5);
 
 # POINTERS
+
+Analogy: Using a 3rd glass to transfer liquids between 2 glasses
+
+### EXAMPLE 1:
+
+int x = 5, y = 10;
+int z;  # Declare a new variable
+
+z = y; 
+y = x;
+x = z;
+
+### SAMPLE SOLUTION 1:
+
+#include <stdio.h>
+
+
+int swap (int *x, int *y) {
+    int z;
+    z = *x;
+    *x = *y;
+    *y = z;
+    return *x, *y;
+}
+
+int main(){
+    int x,y;
+    
+    printf("Enter the value of x: ");
+    scanf("%d", &x);
+    printf("Enter the value of y: ");
+    scanf("%d", &y);
+    x, y = swap(&x,&y);
+    
+    printf("%d is x, %d is y", x, y);
+    return 0;
+} 
+# PASS THE ADDRESSES OF X AND Y TO THE FUNCTION, THE ACTUAL VARIABLES' VALUES WILL BE ALTERED
+
+
