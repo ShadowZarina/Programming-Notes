@@ -83,5 +83,31 @@ int main(){
 0x7ffd19d8172c
 }
 
+EXAMPLE 3
+
+A.R. of int main() {
+
+int x = 5, y = 6;
+num = greaterThan(x,y)
+}
+
+----
+x = address of A100, is given value of 5
+y = address of A104, is given value of 6
+num = address of A108
+----
+
+A.R. of greaterThan(x,y) {
+if (c > d) 
+
+parameters (int c and d):
+c = address of A120, value of 5
+d = address of A124, value of 6
+<<when greaterThan function is called, they receive values of x and y>>
+# c and d are not the same as x and y since they are in diff functions and areas, only the values get passed
+
+local:
+retVal = address of A128
+}
 
 
