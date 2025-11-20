@@ -83,9 +83,13 @@ int main(){
 0x7ffd19d8172c
 }
 
-EXAMPLE 3
+# EXECUTION STACK
+- data structure in computer science that stores information about the active functions 
+(or subroutines) of a running computer program
 
-A.R. of int main() {
+### EXAMPLE 3 (Main and GreaterThan Function)
+
+A.R. (Activation Record) of int main() {
 
 int x = 5, y = 6;
 num = greaterThan(x,y);
@@ -98,7 +102,7 @@ y = address of A104, is given value of 6
 num = address of A108
 ----
 
-A.R. of greaterThan(c,d) {
+A.R. (Activation Record) of greaterThan(int c, int d) {
 int retVal;
 if (c > d) {
   retVal = 1;
@@ -107,7 +111,7 @@ if (c > d) {
 }
 return retVal;
 
-parameters (int c and d):
+parameters (int c, int d):
 c = address of A120, value of 5
 d = address of A124, value of 6
 <<when greaterThan function is called, they receive values of x and y>>
@@ -118,6 +122,9 @@ retVal = address of A128, will get the value of 0
 -- the value of 0 gets transferred to the main function -> num gets value of 0
 
 Once the value is transferred, the function will get closed entirely.
+> When the function gets executed a second time, the variable addresses can change
 }
+
+
 
 
