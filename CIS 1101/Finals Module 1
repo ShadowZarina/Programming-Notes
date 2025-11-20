@@ -88,7 +88,8 @@ EXAMPLE 3
 A.R. of int main() {
 
 int x = 5, y = 6;
-num = greaterThan(x,y)
+num = greaterThan(x,y);
+printf("%d", num);
 }
 
 ----
@@ -97,8 +98,14 @@ y = address of A104, is given value of 6
 num = address of A108
 ----
 
-A.R. of greaterThan(x,y) {
-if (c > d) 
+A.R. of greaterThan(c,d) {
+int retVal;
+if (c > d) {
+  retVal = 1;
+} else {
+  retVal = 0;
+}
+return retVal;
 
 parameters (int c and d):
 c = address of A120, value of 5
@@ -107,7 +114,10 @@ d = address of A124, value of 6
 # c and d are not the same as x and y since they are in diff functions and areas, only the values get passed
 
 local:
-retVal = address of A128
+retVal = address of A128, will get the value of 0
+-- the value of 0 gets transferred to the main function -> num gets value of 0
+
+Once the value is transferred, the function will get closed entirely.
 }
 
 
