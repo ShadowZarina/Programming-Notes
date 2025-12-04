@@ -114,9 +114,11 @@ REMEMBER:
     - put asterisk before function name (eg. int *maxValue)
     - declare array as array[]
     - define variable as &array[0]
+    = REFER EXAMPLE 2
 - if asking for an INTEGER:
     - typically when asking for average, sum, etc.
     - declare array as *array
     - declare variable as *array to POINT TO FIRST ELEMENT IN THE ARRAY 
     - to add to the variable, write *(variable + i) where i = index
+    = REFER EXAMPLE 3
 
