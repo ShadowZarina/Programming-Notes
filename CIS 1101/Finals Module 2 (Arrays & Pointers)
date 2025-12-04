@@ -2,7 +2,7 @@
 - Arrays have their own address; their code blocks/content will have their own addresses.
 = An array can have address of 1, the first element of the array has address of 2, and the second element will have 3.
 
-# EXAMPLES:
+## EXAMPLE 1:
 
 #include<stdio.h>
 
@@ -33,10 +33,79 @@ int main() {
     return 0;
 }
 
-QUIZ ON THURS
-- multiple choice
-- arrays and pointers coding
-- code tracing for both lessons
-= grade to be added to prefi
+# POINTERS
+- ints have 4 bytes, but POINTERS (even if they point to ints) have 8 bytes
+
+## EXAMPLE 2:
+
+#include<stdio.h>
+
+int swap(int *arr, int index1, int index2) {
+    int *p = arr;
+    int temp = *(arr + index1);
+    *(arr + index1) = *(arr + index2);
+    *(arr + index2) = temp;
+}
+
+int main() {
+    int size;
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    int arr[size];
+    printf("Enter the elements of the array: ");
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int index1, index2;
+    printf("Enter the indices of the elements to swap: ");
+    scanf("%d %d", &index1, &index2);
+
+    swap(arr, index1, index2);
+
+    printf("The array after swapping: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+
+## EXAMPLE 3:
+
+#include<stdio.h>
+
+float average(int *arr, int size) {
+    int total = 0;
+    int *p = arr;
+    for (int i = 0; i < size; i++) {
+        total += *(p + i);
+    }
+    return (float)total / size;
+}
+
+
+int main() {
+    int size, i;
+    
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+    
+    int arr[size];
+    
+    printf("Enter the elements of the array: ");
+    for (i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    float avg = average(arr, size);
+    
+    printf("The average of the elements in the array is: %.2f", avg);
+    
+    return 0;
+}
 
 
