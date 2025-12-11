@@ -2,14 +2,14 @@
 
 ## FOR LOOPS
 
-for (initialization; condition; iteration)
+for (initialization; condition; increment/decrement)
 
 ## WHILE LOOPS
 
 int x = 0;   --> INITIALIZATION
 while (x <= 5) {   --> CONDITION
   printf("Hi\n");
-  x++;   --> ITERATION
+  x++;   --> INCREMENT/DECREMENT
 }
 
 ## DO-WHILE LOOPS
