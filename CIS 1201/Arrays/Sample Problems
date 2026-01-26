@@ -1,0 +1,41 @@
+# TASK 1
+- Ask for 5 numbers and store them in an array.
+- Send the array to another function using pointers, and print its elements there.
+
+## INPUT:
+
+#include <stdio.h>
+
+void printArray(int *array, int length) {
+    int i;
+    for (i = 0; i < length; i++) {
+        printf("\nArray number %d: %d", i+1, array[i]);
+    }
+}
+
+int main() {
+    int length = 5, array[5], i;
+    
+    for (i = 0; i < length; i++) {
+        printf("Enter number %d: ", i+1);
+        scanf("%d", &array[i]);
+    }
+    
+    printArray(array, length);
+
+    return 0;
+}
+
+## OUTPUT:
+
+Enter number 1: 7
+Enter number 2: 4
+Enter number 3: 3
+Enter number 4: 5
+Enter number 5: 2
+
+Array number 1: 7
+Array number 2: 4
+Array number 3: 3
+Array number 4: 5
+Array number 5: 2
