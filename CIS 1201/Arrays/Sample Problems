@@ -1,4 +1,5 @@
 # TASK 1
+
 - Ask for 5 numbers and store them in an array.
 - Send the array to another function using pointers, and print its elements there.
 
@@ -39,3 +40,49 @@ Array number 2: 4
 Array number 3: 3
 Array number 4: 5
 Array number 5: 2
+
+----------
+
+# TASK 2   
+
+- main: execute 2 functions
+- askForAString: function to ask for input, returns to main
+- printString: prints input
+
+## INPUT
+
+void askForAString(char* buffer, int size) {
+    printf("Enter a string: ");
+    // fgets is safe because it limits input to 'size'
+    fgets(buffer, size, stdin);
+}
+
+void printString(char* string, int length) {
+    int i;
+    printf("\nThe string is: ");
+    // Note: This will print garbage if the actual string is shorter than the buffer size.
+    for (i = 0; i < length && string[i] != '\0'; i++) {
+        printf("%c", string[i]);
+        // '\0' is the string terminator 
+    }
+}
+
+int main() {
+    // 1. Declare a buffer of 50 characters
+    char string[50]; 
+    
+    // 2. sizeof(string) now correctly returns 50
+    int length = sizeof(string);
+
+    // 3. Execute the 2 functions
+    askForAString(string, length);
+    printString(string, length);
+
+    return 0;
+}
+
+## OUTPUT
+
+Enter a string: Hello world
+
+The string is: Hello world
