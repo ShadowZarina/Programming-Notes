@@ -52,3 +52,152 @@ CRUCIAL NOTE: Even though the local variable fname is destroyed when the functio
 Back in main, the pointer x now holds the address of the memory containing "Christian".
 
 When printf("%s", x) is called, it goes to that address, reads the characters until it hits the null terminator, and prints them to the console.
+
+
+# PROBLEM 2 (SEATWORK)
+
+int x = 10;
+int *y = &x;
+int **z = &y;
+printf("%d", *y);
+printf("%d", **z);
+malloc used to allocate space that will exist EVEN AFTER the function ends (will last until the actual program is terminated). return type of malloc is a pointer (should always be a pointer since malloc always returns an address).
+
+when to use malloc & calloc?
+what happens to the space allocated when a function ends? (heap vs stack)
+lifespan of a local variable?
+
+
+# PROBLEM 3 (TRIPLE & QUADRUPLE POINTERS)
+
+## CODE
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main() {
+
+    char *c = (char*) malloc(20);
+    strcpy(c, "Andrea");
+    char **d = &c;
+    char ***e = &d;
+    char ****f = &e;
+    printf("%s", *d);
+    printf("\n%s", **e);
+    printf("\n%s", ***f);
+
+    int x;
+    int *y;
+    int **z;
+    int ***a;
+
+    x = 10;
+    y = &x;
+    z = &y;
+    a = &z;
+    printf("\n%d", *y);
+    printf("\n%d", **z);
+    printf("\n%d", ***a);
+    
+    return 0;
+}
+
+### OUTPUT
+Andrea
+Andrea
+Andrea
+10
+10
+10
+
+### NOTE:
+Can you address an integer to a double/etc. pointer? NO. It will only work on a single pointer.
+Only the address of a pointer can be addressed to a TRIPLE POINTER.
+
+# PROBLEM 4
+
+## CODE
+
+### REFERENCE CODE 
+
+#include <stdio.h>
+
+int main() {
+    
+    char x[] = "hello";
+    int y[] = {1,2,3,4,5};
+    double z[] = {1.1,2.2,3,4,5};
+    // Print every element of each array WITHOUT using index
+    // Use pointers
+    
+    return 0;
+}
+
+/* EXAMPLE
+
+int main(int argc, char *argv[]) {
+    char toon[] = "Sapatos";
+    int x = 0;
+    while (x<7)
+    {
+        printf("%c - %p\n", *(toon+x), &(toon)+x);
+        // can use %i for integers
+        x++;
+    }
+    return 0;
+}
+
+*/
+
+### FINAL CODE 
+
+#include <stdio.h>
+
+int main() {
+    
+    char x[] = "hello";
+    int y[] = {1,2,3,4,5};
+    double z[] = {1.1,2.2,3,4,5};
+    int a = 0, b = 0, c = 0;
+    while (a<5) {
+        printf("%c - %p\n", *(x+a), &(x)+a);
+        a++;
+    }
+    printf("\n");
+    while (b<5) {
+        printf("%i - %p\n", *(y+b), &(y)+b);
+        b++;
+    }
+    printf("\n");
+    while (c<5) {
+        printf("%.1f - %p\n", *(z+c), &(z)+c);
+        c++;
+    }
+    
+    return 0;
+}
+
+### OUTPUT
+
+h - 0x7fff11e5685e
+e - 0x7fff11e56864
+l - 0x7fff11e5686a
+l - 0x7fff11e56870
+o - 0x7fff11e56876
+
+1 - 0x7fff11e56840
+2 - 0x7fff11e56854
+3 - 0x7fff11e56868
+4 - 0x7fff11e5687c
+5 - 0x7fff11e56890
+
+1.1 - 0x7fff11e56810
+2.2 - 0x7fff11e56838
+3.0 - 0x7fff11e56860
+4.0 - 0x7fff11e56888
+5.0 - 0x7fff11e568b0
+
+
+
+
