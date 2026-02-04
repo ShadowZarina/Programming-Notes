@@ -1,0 +1,48 @@
+# TASK 1 CODE
+
+#include <stdio.h>
+
+int main() {
+    char toon[] = "racecar";
+    char * temp = &toon;
+    int num[] = {1,2,3,4,5};
+    
+    int palindrome = check0(toon);
+    int check1 = check1(temp);
+    printReverse(toon);
+    printThis(toon[2]);
+    int sum = sum(num);
+    int sum = sum(num[2], num[3]);
+    
+    printAverage(num);
+    printAverage(num, num[1], num[2]);
+    **** = getEven(num);
+    **** = checkIfPrime(num[4]);
+    // 4 asterisks is just a PLACEHOLDER for not showing data type
+
+    return 0;
+}
+
+## ANSWERS:
+1. int check0(char *x) or (char x[])
+2. int check1(char *x) or (char x[])
+3. void printReverse(char *x)
+4. void printThis(char x) -- no asterisk since it's only passing a SINGLE CHARACTER
+5. int sum(int *x)
+6. int sum(int x, int y)
+7. void printAverage(int *x)
+8. void printAverage(int *x, int a, int b)
+9. int *getEven(int *x)
+10. int checkIfPrime(int x) OR char *checkIfPrime(int x)
+
+# NOTES:
+- A function can only return ONE VALUE.
+- Why does int *getEven(int *x) have a pointer before the function name?
+
+= The style int *getEven makes it visually clear that getEven is a pointer-returning function.
+= takes an int *, returns an int *
+
+Returning a pointer is useful when:
+= You want to return an array
+= You want to return a modified value without copying
+= You’re working with dynamic memory (malloc)
