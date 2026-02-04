@@ -1,0 +1,139 @@
+
+
+# WHEN TO USE MALLOC VS. CALLOC?
+
+In C programming, both malloc and calloc are used to allocate memory dynamically from the heap, but they differ in initialization and how they accept arguments. 
+
+Use calloc when you need an array or structure to be initialized to all zeros immediately.
+= CALLOC TO SET TO 0
+Use malloc when performance is critical, and you intend to immediately fill or overwrite the memory, making the zeroing process of calloc wasteful. 
+= MALLOC IS FASTER; USE IF NO NEED TO SET TO 0
+
+# KEY COMMANDS
+- free() 
+- end
+
+## EXAMPLE
+
+void printThis() {  
+  int x = 10;
+  char *sts = malloc(20);
+  sts = null;
+}
+
+## NOTES
+- data is not necessarily deleted off main memory when function ends
+- hence, you need to use free()
+
+int strlen(char *str)
+= accepts a string, returns an integer
+
+# TASK 1:
+- Recreate:
+int strlen(char *str) using myStrlen
+= function that counts number of characters in a string and returns the number
+- How to count?
+= counts with a loop until it detects a null character
+
+## CODE (MY OUTPUT)
+
+#include <stdio.h>
+
+int myStrlen(char *str) {
+    int i = 0;
+    while (str[i] != '\0') {
+    if (str[i] == '\n') {
+        str[i] = '\0';
+        break;
+    }
+    i++;
+}
+
+    return i;
+}
+
+int main() {
+    char string[50];
+    printf("Enter a string: ");
+    fgets(string, 50, stdin);
+    printf("%d", myStrlen(string));
+  
+    return 0;
+}
+
+## CODE (SIR'S OUTPUT)
+
+int myStrlen(char *str) {
+    int i = 0;
+    while (*(str+count) != '\0') {
+      i++;
+    }
+    return i;
+}
+
+int main() {
+    char string[50];
+    printf("Enter a string: ");
+    fgets(string, 50, stdin);
+    printf("%d", myStrlen(string));
+  
+    return 0;
+}
+
+
+# TASK 2:
+- Create char *myStrcat(char *str1, char *str2) WITHOUT using the function
+
+## CODE (MY OUTPUT)
+
+#include <stdio.h>
+#include <string.h>
+
+char *myStrcat(char *str1, char *str2) {
+    int i = 0, j = 0;
+
+    while (str1[i] != '\0') {
+        i++;
+    }
+
+    while (str2[j] != '\0') {
+        str1[i + j] = str2[j];
+        j++;
+    }
+
+    str1[i + j] = '\0';
+    
+    return str1;
+}
+
+int main() {
+    char string1[100];
+    printf("Enter string 1: ");
+    fgets(string1, 100, stdin);
+    string1[strlen(string1) - 1] = '\0';
+    
+    char string2[50];
+    printf("Enter string 2: ");
+    fgets(string2, 50, stdin);
+    string2[strlen(string2) - 1] = '\0';
+    
+    printf("%s\n", myStrcat(string1, string2));
+    
+    return 0;
+}
+
+
+# SAMPLE CODE 1
+
+Increment by 4 for memory address of an array of integers
+
+MAIN -- 
+toon = {1,2,3,4,5}
+Memory addresses:
+1. ABCD0
+2. ABCD4
+3. ABCD8
+4. ABCDC
+5. ABCE0
+
+temp = ABCDO (the address of the first element), it points to 1 therefore *temp = 1
