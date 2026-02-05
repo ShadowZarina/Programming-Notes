@@ -125,6 +125,30 @@ int main() {
 
 # SAMPLE CODE 1
 
+## INPUT
+
+main() {
+
+  int toon[] = {1,2,3,4,5};
+  int *temp = toon;
+  int x;
+  for (x=0;x<5;x++) {
+    printf("%i - %p - %p - %p \m", *(toon+x), temp, &temp, toon+x);
+    temp+=1;
+  }
+
+}
+
+## OUTPUT
+
+1 - 1 - 000000000062FE00 - 000000000062FE00
+2 - 2 - 000000000062FE04 - 000000000062FE04
+3 - 3 - 000000000062FE08 - 000000000062FE08
+4 - 4 - 000000000062FE0C - 000000000062FE0C
+5 - 5 - 000000000062FE10 - 000000000062FE10
+
+## NOTES
+
 Increment by 4 for memory address of an array of integers
 
 MAIN -- 
