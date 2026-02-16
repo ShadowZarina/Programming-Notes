@@ -1,0 +1,41 @@
+# SAMPLE PROBLEMS
+
+## Problem 1
+
+int x[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+
+for (int i = 0; i < 3; i++) {
+  for (int j = 0; j < 3; j++) {
+    printf("%i ", x[i][j]);
+  }
+  printf("\n");
+}
+
+### OUTPUT
+1 2 3
+4 5 6
+7 8 9
+
+
+## Problem 2
+
+void printMatrix(int (*x)[3]) {
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+        printf("%i ", x[i][j]);
+      }
+      printf("\n");
+    }
+}
+
+
+int main() {
+    int x[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+    
+    printMatrix(x);
+
+    return 0;
+}
+
+
+## Problem 3
