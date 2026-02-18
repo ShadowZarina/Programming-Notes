@@ -24,9 +24,17 @@ int main() {
     } else {
         printf("They are not the same.\n");
     }
-    
+
+/*
+if (str1 > str2) {
+} else if (str1
+
+*/
     return 0;
 }
+
+--- ALSO INCLUDE THE GREATER THAN & LESS THAN
+---------
 
 ### PROBLEM 2: ADD 2 NUMBERS WITH VOID FUNCTION W/ 0 PARAMETERS 
 
@@ -44,5 +52,111 @@ int main() {
     sum();
     printf("%d", a);
     
+    return 0;
+}
+
+OR
+
+int one, two, sum;
+
+void add() {
+    sum = one + two;
+}
+
+int main(int argc, char *argv[]) {
+    one = 1;
+    two = 2;
+    add();
+    printf("%d", sum);
+
+    return 0;
+}
+
+---------
+
+### PROBLEM 3: ADD 2 NUMBERS WITH VOID FUNCTION W/ 0 PARAMETERS (NO GLOBAL VARIABLES)
+THIS IS IMPOSSIBLE.
+
+-----------
+RECURSIVE FUNCTIONS
+-----------
+
+### PROBLEM 4: PRINTING 1-100 WITHOUT LOOPS
+
+#include <stdio.h>
+
+int printIt(int current) {
+    
+    if (current > 100) {
+        return 0;
+    } else {
+        printf("%i", current);
+        printIt(++current);
+    }
+}
+
+int main(int argc, char *argv[]) {
+    printIt(1);
+    return 0;
+}
+
+
+/*
+int argc (Argument Count)
+Purpose: argc is an integer that stores the total number of command-line arguments provided when the program is run.
+Value: Its value is always at least 1, because the name of the program itself is considered the first argument.
+Usage: It is typically used to loop through the argv array to process each argument individually. 
+
+char *argv[] (Argument Vector/Values) 
+Purpose: argv is an array of pointers to C-style strings (character arrays), where each string is one of the command-line arguments.
+Structure:
+argv[0] points to the string containing the name (or full path) of the program executable.
+argv[1] points to the first argument provided after the program name.
+argv[2] points to the second, and so on, up to argv[argc - 1].
+The array is null-terminated, meaning argv[argc] is a NULL pointer.
+*/
+
+/*
+The values passed to main would be:
+argc (argument count) would be 3 (the program name + 2 arguments).
+argv would be an array of three string pointers:
+argv[0] points to the string "./myprogram".
+argv[1] points to the string "arg1".
+argv[2] points to the string "arg2". 
+*/
+
+
+### PROBLEM 5: USE A VOID FUNCTION & POINTERS TO ADD 2 INTEGERS
+
+#include <stdio.h>
+
+void add(int *one, int *two) {
+    *one += *two;
+}
+
+int main(int argc, char *argv[]) {
+    int one = 5;
+    int two = 10;
+    printf("%d + %d", one, two);
+    add(&one,&two);
+    printf("\n%d", one);
+
+    return 0;
+}
+
+OR
+
+void sum (int *first, int second) {
+    *first += second;
+}
+
+int main (int argc, char *argv[]) {
+    int *first, second, temp;
+    temp = 10;
+    second = 20;
+    first = &temp;
+    sum(first, second);
+    printf("%i", temp);
+
     return 0;
 }
