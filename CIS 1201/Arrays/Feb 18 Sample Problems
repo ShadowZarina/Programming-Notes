@@ -1,0 +1,48 @@
+### PROBLEM 1: CREATE OWN VERSION OF STRCMP
+
+#include <stdio.h>
+#include <string.h>
+
+int my_strcmp(char *str1, char *str2) {
+    int length = strlen(str1);
+    for (int i = 0; i < length; i++) {
+        if (*(str1+i) != *(str2+i)) {
+            return -1;
+        }
+    }
+    return 0;
+}
+
+int main() {
+    char str1[20] = "Hello";
+    char str2[20] = "Hello";
+    
+    int result = my_strcmp(str1, str2);
+    
+    if (result == 0) {
+        printf("They are the same.\n");
+    } else {
+        printf("They are not the same.\n");
+    }
+    
+    return 0;
+}
+
+### PROBLEM 2: ADD 2 NUMBERS WITH VOID FUNCTION W/ 0 PARAMETERS 
+
+HINT: GLOBAL VARIABLES
+
+int a = 5;
+int b = 10;
+
+void sum() {
+    a += b;
+}
+
+int main() {
+    printf("%d + %d\n", a,b);
+    sum();
+    printf("%d", a);
+    
+    return 0;
+}
