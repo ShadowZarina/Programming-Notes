@@ -1,1 +1,33 @@
+#include <stdio.h>
 
+/* * Compares two strings:
+ * Returns 0 if they are equal.
+ * Returns -x (negative) if str1 < str2.
+ * Returns +x (positive) if str1 > str2.
+ */
+int mystrcmp(char *str1, char *str2) {
+    while (*str1 && (*str1 == *str2)) {
+        str1++;
+        str2++;
+    }
+    // Return the difference between the first non-matching characters
+    return *(unsigned char *)str1 - *(unsigned char *)str2;
+}
+
+int main() {
+    char s1[] = "Apple";
+    char s2[] = "Apple";
+    char s3[] = "Banana";
+    
+    // Case 1: str1 == str2 (Expected: 0)
+    printf("Case 1 (Equal): %d\n", mystrcmp(s1, s2));
+
+    // Case 2: str1 < str2 (Expected: -x)
+    // 'A' (65) < 'B' (66), so "Apple" < "Banana"
+    printf("Case 2 (Less than): %d\n", mystrcmp(s1, s3));
+
+    // Case 3: str1 > str2 (Expected: +x)
+    printf("Case 3 (Greater than): %d\n", mystrcmp(s3, s1));
+
+    return 0;
+}
