@@ -1,0 +1,22 @@
+# MALLOC VS CALLOC
+
+- Malloc & calloc are both used to retain values even after the function is terminated (stack values are deleted, heap values remain).
+
+When to Use malloc
+
+Use malloc when speed is a priority, or when you plan to immediately overwrite the entire block of memory anyway, making initialization a waste of CPU cycles. 
+You plan to fill the buffer immediately: E.g., fread or strcpy.
+Performance is critical: You do not want to waste time zeroing out memory you will overwrite.
+Small allocations: Where the cost of initialization is higher than the benefit.
+Allocating a single item: Where you only need one struct or primitive type. 
+
+When to Use calloc
+
+Use calloc when you need a "clean slate" and want to avoid bugs related to reading uninitialized memory. 
+Arrays and Structures: When allocating arrays of structs, especially if they contain pointers that should be initialized to NULL.
+String Buffers: Ensuring the entire string buffer is zeroed (including the null terminator) prevents garbage data at the end of the string.
+Safety/Security: calloc can protect against integer overflow vulnerabilities during multiplication (count * sizeof).
+Defaulting to zero: When you want all variables initialized to 0, false, or NULL by default. 
+
+
+# STRUCTS
