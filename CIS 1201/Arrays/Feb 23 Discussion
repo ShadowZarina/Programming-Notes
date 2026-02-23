@@ -19,4 +19,226 @@ Safety/Security: calloc can protect against integer overflow vulnerabilities dur
 Defaulting to zero: When you want all variables initialized to 0, false, or NULL by default. 
 
 
+
 # STRUCTS
+
+
+## SAMPLE PROBLEM 1.1 (Struct with Function & Strcpy)
+
+
+#include <stdio.h>
+#include <stdlib.h>
+struct Person
+{
+	int age;
+	char name[20];
+	char gender[20];
+	char address[20];
+};
+
+
+
+struct Person getPersonInfo()
+{
+	struct Person Student1;
+	Student1.age = 10;
+	strcpy(Student1.name, "Alex");
+	strcpy(Student1.gender, "Male");
+	strcpy(Student1.address, "Cebu");
+	
+	return Student1;
+}
+
+
+main()
+{
+	struct Person x = getPersonInfo();
+	printf("%i\n",x.age);
+	printf("%s\n",x.name);
+	printf("%s\n",x.gender);
+	printf("%s\n",x.address);
+	
+}
+
+
+
+## SAMPLE PROBLEM 1.2 (Struct with Function & Scanf)
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Person
+{
+	int age;
+	char name[20];
+	char gender[20];
+	char address[20];
+};
+
+struct Person getPersonInfo()
+{
+	struct Person S;
+
+	printf("Enter the student's age: ");
+	scanf("%d", &S.age);
+	printf("Enter the student's name: ");
+	scanf("%s", &S.name);
+	printf("Enter the student's gender: ");
+	scanf("%s", &S.gender);
+	printf("Enter the student's address: ");
+	scanf("%s", &S.address);
+	
+	return S;
+}
+
+
+int main()
+{
+	struct Person x = getPersonInfo();
+	
+	printf("%i\n",x.age);
+	printf("%s\n",x.name);
+	printf("%s\n",x.gender);
+	printf("%s\n",x.address);
+	
+	return 0;
+}
+
+
+
+## SAMPLE PROBLEM 1.3 (Struct with Loops, Inputs & Array Instances)
+
+
+#include <stdio.h>
+
+struct Person
+{
+	int age;
+	char name[20];
+	char gender[20];
+	char address[20];
+};
+
+void getPersonInfo(struct Person S[], int size)
+{
+    for (int i = 0; i < size; i++) {
+        printf("Age of Student %d: ", i+1);
+        scanf("%d", &S[i].age);
+        printf("Name of Student %d: ", i+1);
+        scanf("%s", &S[i].name);
+        printf("Gender of Student %d: ", i+1);
+        scanf("%s", &S[i].gender);
+        printf("Address of Student %d: ", i+1);
+        scanf("%s", &S[i].address);
+    }
+}
+
+int main()
+{
+    int size;
+    
+    printf("Number of students to be inputted: ");
+    scanf("%d", &size);
+    
+    struct Person x[size];
+
+    getPersonInfo(x, size);
+    
+    printf("\nStudent Info:\n\n");
+    for (int i = 0; i < size; i++) {
+        printf("Age of Student %d: %i\n", i+1, x[i].age);
+        printf("Name of Student %d: %s\n", i+1, x[i].name);
+        printf("Gender of Student %d: %s\n", i+1, x[i].gender);
+        printf("Address of Student %d: %s", i+1, x[i].address);
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+
+## SAMPLE PROBLEM 2 (Pointer Function with Malloc)
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int *getInt()
+{
+  int *nums = (int *) malloc(2 * sizeof(int));
+  nums[0] = 1;
+  nums[1] = 2;
+  return nums;
+}
+
+int main()
+{
+  //getInt();
+  int *numbers = getInt();
+  printf("%i\n", numbers[0]);
+  printf("%i\n", numbers[1]);
+  return 0;
+}
+
+
+## SAMPLE PROBLEM 3 (Pointer Function w/ No Parameters, Malloc w/ Free)
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Person
+{
+    int age;
+    char name[20];
+    char gender[20];
+    char address[20];
+};
+
+int size;
+
+struct Person* getPersonInfo()
+{
+    printf("Number of students to be inputted: ");
+    scanf("%d", &size);
+
+    struct Person *S = malloc(size * sizeof(struct Person));
+
+    for (int i = 0; i < size; i++)
+    {
+        printf("\nAge of Student %d: ", i + 1);
+        scanf("%d", &S[i].age);
+
+        printf("Name of Student %d: ", i + 1);
+        scanf("%19s", S[i].name);
+
+        printf("Gender of Student %d: ", i + 1);
+        scanf("%19s", S[i].gender);
+
+        printf("Address of Student %d: ", i + 1);
+        scanf("%19s", S[i].address);
+    }
+
+    return S;
+}
+
+int main()
+{
+    struct Person *x = getPersonInfo();
+
+    printf("\nStudent Info:\n\n");
+
+    for (int i = 0; i < size; i++)
+    {
+        printf("Age of Student %d: %d\n", i + 1, x[i].age);
+        printf("Name of Student %d: %s\n", i + 1, x[i].name);
+        printf("Gender of Student %d: %s\n", i + 1, x[i].gender);
+        printf("Address of Student %d: %s\n\n", i + 1, x[i].address);
+    }
+
+    free(x);
+
+    return 0;
+}
