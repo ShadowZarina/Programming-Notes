@@ -160,3 +160,116 @@ int main (int argc, char *argv[]) {
 
     return 0;
 }
+
+
+### PROBLEM 6 (FULL CODE FOR PRINTING WITH POINTERS)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void printThis1(int x[][3])
+{
+	int a,b;
+	for(a=0;a<3;a++)
+	{
+		for(b=0;b<3;b++)
+		{
+			printf("%i",x[a][b]);
+		}
+		printf("\n");	
+	}	
+}
+
+int ** getValues()
+{
+	int *x1 = (int *) malloc(3* sizeof(int));
+	x1[0] = 1; x1[1] = 2; x1[2] = 3;
+	//printf("%i",x1[0]);
+	//printf("%i",x1[1]);
+	//printf("%i",x1[2]);	
+	
+	int *x2 = malloc(12);
+	x2[0] = 4; x2[1] = 5; x2[2] = 6;
+	//printf("%i",x2[0]);
+	//printf("%i",x2[1]);
+	//printf("%i",x2[2]);	
+	
+	int *x3 = malloc(12);
+	x3[0] = 7; x3[1] = 8; x3[2] = 9;
+	//printf("%i",x3[0]);
+	//printf("%i",x3[1]);
+	//printf("%i",x3[2]);	
+	
+	int **x =  (int *)malloc(3 * sizeof(int *));
+	x[0]=x1;
+	x[1]=x2;
+	x[2]=x3;
+	
+	return x;
+}
+
+
+void printThis2(int *x)
+{
+	int a,b;
+	for(a=0;a<3;a++)
+	{
+		for(b=0;b<3;b++)
+		{
+			printf("%i",*(x++));
+		}
+		printf("\n");	
+	}	
+}
+
+void printThis3(int **x)
+{
+	int a,b;
+	printf("\n");	
+	for(a=0;a<3;a++)
+	{
+		for(b=0;b<3;b++)
+		{
+			printf("%i",*(*(x + a) + b));
+		}
+		
+		printf("\n");	
+	}	
+}
+
+
+void printThis4(int **x)
+{
+int a,b;
+	for(a=0;a<3;a++)
+	{
+		for(b=0;b<3;b++)
+		{
+			printf("%i",x[a][b]);
+		}
+		
+		
+		printf("\n");	
+	}	
+	printf("\n");
+}
+
+int main() {
+
+	int x[][3]={
+				{1,2,3},
+				{4,5,6},
+				{7,8,9}};
+
+
+	//printThis1(x);
+	//printThis2(x);
+	
+	int **y = getValues();
+	printThis3(y);
+	printf("\n");	
+	printThis4(y);
+	
+	
+	
+}
