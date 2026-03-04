@@ -75,10 +75,10 @@ void showQueue(int *queue) {
 }
 
 int main() {
-    int queue[MAX] = {1,1,1,1,1,1,1,1,1,1};
+    int queue[MAX] = {};
     int head = 0;
     int tail = 0;
-    int count = 10;
+    int count = 0;
     int choice;
 
     do {
