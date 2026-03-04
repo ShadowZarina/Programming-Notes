@@ -10,59 +10,75 @@ QUEUE - LILO/FIFO
 
 #define MAX 10
 
-void getNumber(int *queue, int *size) {
-    if (*size < MAX) {
-        queue[*size] = 1;
-        (*size)++;
-    } else {
+void getNumber(int *queue, int *tail, int *count) {
+    if (*count == MAX) {
         printf("\nError! Cannot add to the queue.");
+        return;
     }
+
+    queue[*tail] = 1;
+    *tail = (*tail + 1) % MAX;
+    (*count)++;
 }
 
-void getNumberSenior(int *queue, int *size) {
-    if (*size < MAX) {
-        queue[*size] = 2;
-        (*size)++;
-    } else {
+void getNumberSenior(int *queue, int *tail, int *count) {
+    if (*count == MAX) {
         printf("\nError! Cannot add to the queue.");
+        return;
     }
+
+    queue[*tail] = 2;
+    *tail = (*tail + 1) % MAX;
+    (*count)++;
 }
 
-void accommodate(int *queue, int *size) {
-    int i;
+void accommodate(int *queue, int *head, int *tail, int *count) {
+    if (*count == 0) {
+        printf("\nQueue is empty.");
+        return;
+    }
 
-    for (i = 0; i < *size; i++) {
-        if (queue[i] == 2) {
-            queue[i] = 0;
-            return;
-        }
+    int tailIndex = (*tail - 1 + MAX) % MAX;
+    
+    int i; 
+    for (i = 0; i < MAX; i++) { 
+        if (queue[i] == 2) { 
+            if (queue[*head] == 2) {
+                queue[*head] = 0;
+                *head = (*head + 1) % MAX;
+            }
+            else if (queue[tailIndex] == 2) {
+                queue[tailIndex] = 0;
+                *tail = tailIndex;
+                *tail = (*tail)-i;
+            } else {
+                queue[i] = 0; 
+            }
+            (*count)--; 
+            return; 
+        }    
     }
     
-    for (i = 0; i < *size; i++) {
-        if (queue[i] == 1) {
-            queue[i] = 0;
-            return;
-        }
-    }
-    printf("\nQueue is empty.");
+
+        queue[*head] = 0;
+        *head = (*head + 1) % MAX;
+        (*count)--;
 }
 
-void showMenu(int *queue, int size) {
+void showQueue(int *queue) {
+    int i;
     printf("\nQueue: ");
-    for (int i = 0; i < size; i++) {
+    for (i = 0; i < MAX; i++) {
         printf("%d ", queue[i]);
     }
-    for (int i = size; i < 10; i++) {
-        printf("%d ", 0);
-    }
-    
     printf("\n");
 }
 
-
 int main() {
-    int queue[MAX] = {0};
-    int size = 0;
+    int queue[MAX] = {1,1,1,1,1,1,1,1,1,1};
+    int head = 0;
+    int tail = 0;
+    int count = 10;
     int choice;
 
     do {
@@ -76,16 +92,16 @@ int main() {
 
         switch (choice) {
             case 1:
-                getNumber(queue, &size);
-                showMenu(queue, size);
+                getNumber(queue, &tail, &count);
+                showQueue(queue);
                 break;
             case 2:
-                getNumberSenior(queue, &size);
-                showMenu(queue, size);
+                getNumberSenior(queue, &tail, &count);
+                showQueue(queue);
                 break;
             case 3:
-                accommodate(queue, &size);
-                showMenu(queue, size);
+                accommodate(queue, &head, &tail, &count);
+                showQueue(queue);
                 break;
             case 4:
                 printf("\nThank you for queueing!\n");
