@@ -1,0 +1,39 @@
+### INSERTION SORT ON AN ARRAY OF 5
+
+#include <stdio.h>
+
+void get5Numbers(int arr[]) {
+  printf("Enter 5 numbers:\n");
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &arr[i]);
+    }
+}
+
+void sort(int *arr) {
+    for (int i = 1; i < 5; i++) {
+        int key = *(arr+i);
+        int j = i - 1;
+        
+        while (j >= 0 && *(arr+j) > key) {
+            *(arr+j+1) = *(arr+j);
+            j -= 1;
+        }
+        *(arr+j+1) = key;
+    }
+}
+
+void print(int *arr) {
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", *(arr+i));
+    }
+}
+
+int main() {
+    int arr[5];
+    
+    get5Numbers(arr);
+    sort(arr);
+    print(arr);
+
+    return 0;
+}
