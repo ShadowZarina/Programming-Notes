@@ -1,0 +1,68 @@
+# LINEAR SEARCH
+
+Linear search in C is a sequential searching algorithm that checks each element of a list one by one 
+until a match is found or the entire list has been traversed. It is simple to implement and works on both sorted and unsorted data. 
+
+int linearSearch(int arr[], int size, int key) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == key) {
+            return i; // Return the index if the key is found
+        }
+    }
+    return -1; // Return -1 if the key is not found
+}
+
+
+# BINARY SEARCH
+
+Binary search is an efficient algorithm for finding an element in a sorted array. 
+It works by repeatedly halving the search space, which results in a time complexity of O(log n). 
+The C standard library provides a general-purpose function called bsearch() in <stdlib.h> for this purpose. 
+
+The Binary Search Algorithm
+The core principle involves a "divide and conquer" strategy: 
+
+Initialization: 
+- Define two pointers, low and high, to the first and last indices of the sorted array, respectively.
+Find Middle: 
+- Calculate the middle index mid. A common, overflow-safe way to do this is mid = low + (high - low) / 2.
+Compare: 
+- Compare the target value with the element at arr[mid].
+
+- If they are equal, the target is found, and its index is returned.
+- If the target is smaller than arr[mid], the search continues in the left half by setting high = mid - 1.
+- If the target is larger than arr[mid], the search continues in the right half by setting low = mid + 1.
+
+Repeat: Steps 2 and 3 are repeated until the target is found or the search space is exhausted (when low > high). 
+- If the loop finishes without finding the element, the function returns -1 (or similar indicator of "not found"). 
+
+
+
+// Function to perform binary search
+int binarySearch(int arr[], int size, int target) {
+    int low = 0;
+    int high = size - 1;
+
+    while (low <= high) {
+        // Calculate mid-point to avoid potential overflow
+        int mid = low + (high - low) / 2;
+
+        // Check if target is present at mid
+        if (arr[mid] == target) {
+            return mid;
+        }
+
+        // If target is greater, ignore left half
+        if (arr[mid] < target) {
+            low = mid + 1;
+        }
+
+        // If target is smaller, ignore right half
+        else {
+            high = mid - 1;
+        }
+    }
+
+    // Element not found
+    return -1;
+}
