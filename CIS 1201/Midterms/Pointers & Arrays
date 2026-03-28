@@ -1,0 +1,73 @@
+###  Pointers and Dynamic Arrays [COVERAGE]
+
+- Pointers (definition, usage, passing/ returning to/from functions, pass-by-copy vs pass-by-address)
+- Arrays (definition, usage, passing/ returning to/from functions, pointer arithmetic and traversal by pointers vs index accessing)
+
+- Memory Management (malloc, calloc, realloc, free)
+
+- Array Operations (Search, Sort, and Traversal)
+- Elementary Sorting Algorithms (insertion, selection, bubble)
+
+- Searching Algorithms
+  = linear search
+  = binary search [Optional] 
+
+
+### GUIDE
+
+
+. PointersA pointer is a variable that stores the memory address of another variable.Definition & Usage: Defined using the * operator.Pass-by-Copy vs. Pass-by-Address:Copy: The function gets a duplicate of the value; original remains unchanged.Address: The function gets the memory location; changes affect the original variable.Cvoid swap(int *a, int *b) { // Pass-by-address
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int x = 10, y = 20;
+    swap(&x, &y); // Pass addresses using &
+    return 0;
+}
+2. Arrays & Pointer ArithmeticIn C, the name of an array is a pointer to its first element.Traversal: You can access elements using indices arr[i] or pointer arithmetic *(arr + i).Passing to Functions: Arrays are always passed by address (as a pointer).Cvoid printArray(int *arr, int size) {
+    for (int i = 0; i < size; i++) {
+        // Pointer arithmetic: arr + i moves the pointer by i * sizeof(int)
+        printf("%d ", *(arr + i)); 
+    }
+}
+3. Dynamic Memory ManagementThis allows you to request memory from the Heap during runtime.FunctionDescriptionmalloc(size)Allocates a block of memory; contains garbage values.calloc(n, size)Allocates memory for n items and initializes them to zero.realloc(ptr, size)Resizes an existing memory block.free(ptr)Deallocates memory to prevent memory leaks.Cint *arr = (int*)malloc(5 * sizeof(int));
+arr = (int*)realloc(arr, 10 * sizeof(int)); // Resize to 10
+free(arr); // Clean up
+4. Array Operations: Search and SortSearching AlgorithmsLinear Search: Checks every element sequentially. (Time: $O(n)$)Binary Search: Requires a sorted array. Splits the search area in half repeatedly. (Time: $O(\log n)$)C// Binary Search Example
+int binarySearch(int arr[], int n, int target) {
+    int low = 0, high = n - 1;
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == target) return mid;
+        if (arr[mid] < target) low = mid + 1;
+        else high = mid - 1;
+    }
+    return -1;
+}
+Elementary Sorting AlgorithmsSorting organizes data in a specific order (e.g., ascending).Bubble Sort: Repeatedly swaps adjacent elements if they are in the wrong order.Selection Sort: Finds the minimum element from the unsorted part and puts it at the beginning.Insertion Sort: Builds the final sorted array one item at a time by "inserting" elements into their correct position.C// Selection Sort Example
+void selectionSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int min_idx = i;
+        for (int j = i + 1; j < n; j++)
+            if (arr[j] < arr[min_idx]) min_idx = j;
+        
+        // Swap arr[min_idx] and arr[i]
+        int temp = arr[min_idx];
+        arr[min_idx] = arr[i];
+        arr[i] = temp;
+    }
+}
+
+// Bubble Sort Example
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n-1; i++)
+        for (int j = 0; j < n-i-1; j++)
+            if (arr[j] > arr[j+1]) {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+}
