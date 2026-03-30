@@ -1,0 +1,163 @@
+# STACKS
+
+FILO = first in last out
+
+
+### PARTS/COMPONENTS OF A STACK
+- Size
+- Top/Last (last to enter stack)
+
+### FUNCTIONS
+- Push()
+- Pop()
+- Peek() -- returns the top element (the last added item) without removing it or modifying the stack's structure
+
+
+--------------------------------------------------------------------------------
+
+### CODING EXAMPLE 1:
+
+### MAKE A PROGRAM WITH PUSH/POP/PEEK FUNCTIONS USING THE FF:
+
+struct stack 
+{
+  char values[20];
+  int size;
+  int top;
+};
+
+struct struct temp = {" ", 20, 0};
+// values are empty, size is 20, top is 0 (the value 0 will be pushed)
+
+### CODE
+
+#include <stdio.h>
+
+// Stack
+struct stack 
+{
+  char values[20];
+  int size;
+  int top;
+};
+
+// Push function
+int push(struct stack *s, char value) {
+    if (s->top == s->size-1) {
+        printf("Stack Overflow: Cannot push %c, stack is full.\n", value);
+        return 1;
+    } else {
+        s->top++;
+        s->values[s->top] = value;
+        printf("Pushed %c onto the stack.\n", value);
+    }
+}
+
+// Pop function
+int pop(struct stack *s) {
+    if (s->top == -1) {
+        printf("Stack Underflow: No value can be deleted.\n");
+        return 1;
+    } else {
+        char popped = s->values[s->top];
+        printf("%c has been popped.\n", popped);
+        s->top--;
+    }
+}
+
+// Peek function
+void peek (struct stack *s) {
+    if (s->top == -1) {
+        printf("Stack Underflow: The stack is empty.");
+    } else {
+        printf("The value at the top is %c.\n", s->values[s->top]);
+    }
+}
+
+// Main function
+int main() {
+    struct stack temp = {"", 20, -1};
+    int choice;
+    
+    while (1) {
+       
+       printf("\nMenu:\n1. Push\n2. Pop\n3. Peek\n4. Exit\nEnter a value (1-4): ");
+       scanf("%d", &choice);
+       
+       switch (choice) {
+        case 1:
+            char a;
+            printf("Enter a value to be pushed: ");
+            scanf(" %c", &a);
+            push(&temp, a);
+            break;
+        case 2:
+            pop(&temp);
+            break;
+        case 3:
+            peek(&temp);
+            break;
+        case 4:
+            printf("Exiting the program...");
+            return 0;
+        default:
+            printf("Invalid input!");
+        } 
+    }
+}
+
+
+--------------------------------------------------------------------------------
+
+# QUEUES
+
+FIFO = first in first out
+
+
+
+--------------------------------------------------------------------------------
+
+### PROGRAM TO SOLVE COMPLEX MATH EQUATIONS
+
+1. Break down each character (parentheses included) and add them to a STACK one-by-one
+
+y = ((4 x 2) - 6) / (2 x 5)
+
+)
+2
+x
+4
+(
+(
+
+2. Solve the first group
+
+temp1 = 4 x 2 = 8
+
+3. Rewrite the stack to include the value & remove parentheses; add the next characters
+
+)
+6
+-
+8
+(
+
+4. Repeat this process UNTIL you have 2 values and 1 operator only
+
+temp1 = 8 - 6 = 2
+
+)
+5
+x
+2
+(
+/
+2
+
+temp1 = 2 x 5 = 10
+
+10
+/
+2
+
+temp1 = 2/10 = 0.2
