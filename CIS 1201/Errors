@@ -1,0 +1,53 @@
+1. Syntax Errors (Compile-time)These occur when you violate the rules of the C language. 
+The compiler cannot understand the code and refuses to create an executable file.
+Common causes: Missing semicolons, unmatched braces, or misspelled keywords.
+
+Example:
+int main() {
+    int x = 10
+    printf("%d", x); // Error: Expected ';' before printf
+    return 0;
+}
+
+2. Runtime Errors
+- These occur while the program is running. The syntax is perfect, but the program asks the computer to do something impossible.
+Division by Zero: Dividing a number by 0.
+Segmentation Fault: Accessing memory that doesn't belong to the program (e.g., dereferencing a NULL pointer).
+Example:
+
+int *ptr = NULL;
+*ptr = 10; // Error: Segmentation fault (accessing null memory)
+
+3. Logical Errors
+The program runs without crashing, but the output is wrong. 
+These are the hardest to find because the computer is doing exactly what you told it to do—you just told it the wrong thing.
+Common causes: Using > instead of <, or incorrect mathematical formulas.
+
+Example:
+// Intention: Find the average of two numbers
+int a = 10, b = 20;
+int avg = a + b / 2; 
+// Logic Error: Due to operator precedence, this does 10 + (20/2) = 20. 
+// Correct way: (a + b) / 2
+
+4. Semantic Errors
+This is a specific type of compile-time error where the statements are syntactically correct but don't make sense to the compiler in context.
+
+Example:
+int a, b, c;
+a + b = c; // Error: L-value required. You can't assign 'c' to an expression.
+
+5. Linker Errors
+These happen after compilation, during the "linking" phase. 
+The compiler knows what you want to do, but it can't find the definition of a function or variable you called.
+Common causes: Misspelling Main instead of main, or calling a function from a library you didn't include.
+
+Example:
+#include <stdio.h>
+void greet(); // Prototype exists
+
+int main() {
+    greett(); // Error: Undefined reference to 'greett' (misspelled)
+    return 0;
+}
+Summary TableError TypeDiscovered AtWill it Run?ResultSyntaxCompilationNoError message in terminalRuntimeExecutionStarts, then stopsProgram crashes/abortsLogicalPost-ExecutionYesWrong output/behaviorLinkerLinkingNo"Undefined reference" error
