@@ -17,3 +17,15 @@ PROG 2 MIDTERMS:
 
 PROG 1 FINALS:
 [WRITTEN](https://docs.google.com/forms/d/e/1FAIpQLScB9p7Wvp0QuazCwdYQ5SaotV0f3RB9BdwKnX-rLQN6DGGdvw/viewscore?viewscore=AE0zAgDX7MPnbZJq9zXaRedaB2rBwmt7S791zsXd03apmZCVSsmalRVaOn6Ewz7KgRkUjXU)
+
+
+### SAMPLE PROBEMS
+1. 1st iteration of outer loop of bubble sort
+2. result after 1st iteration of insertion sort
+3. traverse through array of structs, return array of structs that match requirements
+4. search for specific value in structs
+
+## MUST STUDY!
+- How to return array of structs and struct of arrays
+- Enums in structs
+- Returning structs
