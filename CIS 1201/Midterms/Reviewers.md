@@ -22,10 +22,18 @@ PROG 1 FINALS:
 ### SAMPLE PROBEMS
 1. 1st iteration of outer loop of bubble sort
 2. result after 1st iteration of insertion sort
-3. traverse through array of structs, return array of structs that match requirements
+3. traverse through array of structs (roster), return array of structs (members in guild) that match requirements
 4. search for specific value in structs
+5. correct the data types, members, nesting levels in structs
+   - enables addProduct function to map using pointer arithmetic
+6. linear search = registration == targetID
+   - set boolean flag to True, return entire Vehicle struct if found
+   - set boolean flag to False & return empty default Vehicle (ID set to 0, learn how to do this!)
 
 ## MUST STUDY!
 - How to return array of structs and struct of arrays
 - Enums in structs
 - Returning structs
+- Strcmp
+  = Negative integer (< 0): The first string is lexicographically less than the second string (it would appear earlier in a dictionary).
+  = Positive integer (> 0): The first string is lexicographically greater than the second string (it would appear later in a dictionary). 
