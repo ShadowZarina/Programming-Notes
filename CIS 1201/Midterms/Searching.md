@@ -3,6 +3,7 @@
 Linear search in C is a sequential searching algorithm that checks each element of a list one by one 
 until a match is found or the entire list has been traversed. It is simple to implement and works on both sorted and unsorted data. 
 
+```
 int linearSearch(int arr[], int size, int key) {
     for (int i = 0; i < size; i++) {
         if (arr[i] == key) {
@@ -11,7 +12,9 @@ int linearSearch(int arr[], int size, int key) {
     }
     return -1; // Return -1 if the key is not found
 }
+```
 
+---
 
 # BINARY SEARCH
 
@@ -19,7 +22,7 @@ Binary search is an efficient algorithm for finding an element in a sorted array
 It works by repeatedly halving the search space, which results in a time complexity of O(log n). 
 The C standard library provides a general-purpose function called bsearch() in <stdlib.h> for this purpose. 
 
-The Binary Search Algorithm
+## The Binary Search Algorithm
 The core principle involves a "divide and conquer" strategy: 
 
 Initialization: 
@@ -39,6 +42,7 @@ Repeat: Steps 2 and 3 are repeated until the target is found or the search space
 
 
 // Function to perform binary search
+```
 int binarySearch(int arr[], int size, int target) {
     int low = 0;
     int high = size - 1;
@@ -66,3 +70,22 @@ int binarySearch(int arr[], int size, int target) {
     // Element not found
     return -1;
 }
+```
+
+---
+
+BINARY SEARCH is only applicatble when the data is SORTED.
+
+### STEPS:
+1. Sorting
+2. Searching (Binary)
+
+
+Example:
+
+10 values -> it is better to just search without sorting
+1000 values -> not worth to sort first
+
+WHEN IS IT WORTH IT TO SORT FIRST?
+- When the list will be used again and again
+- eg. when database indexing (for IDs, names in database) -- it HAS to maintain the sorted state
