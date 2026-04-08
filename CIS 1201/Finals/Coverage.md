@@ -1,0 +1,7 @@
+# PRE-FINALS COVERAGE 
+
+LISTS (ARRAYS)
+- Stacks
+- Queues
+
+
