@@ -128,3 +128,51 @@ int main() {
     }
 }
 ```
+
+## CREATE & PRINT FUNCTIONS FOR LINKED LISTS
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node *link;
+};
+
+void createList(struct Node *head) {
+    head->data = 100;
+    head->link = malloc(sizeof(struct Node));
+
+    struct Node *n2 = head->link;
+    n2->data = 200;
+    n2->link = malloc(sizeof(struct Node));
+
+    struct Node *n3 = n2->link;
+    n3->data = 300;
+    n3->link = malloc(sizeof(struct Node));
+
+    struct Node *n4 = n3->link;
+    n4->data = 400;
+    n4->link = malloc(sizeof(struct Node));
+
+    struct Node *n5 = n4->link;
+    n5->data = 500;
+    n5->link = NULL;
+}
+
+void printList(struct Node *head) {
+    for (struct Node *current = head; current != NULL; current = current->link) {
+        printf("%d ", current->data);
+    }
+}
+
+int main() {
+    struct Node *head = malloc(sizeof(struct Node));
+
+    createList(head);
+    printList(head);
+
+    return 0;
+}
+```
