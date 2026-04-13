@@ -162,8 +162,17 @@ void createList(struct Node *head) {
 }
 
 void printList(struct Node *head) {
+    int last = 0;
     for (struct Node *current = head; current != NULL; current = current->link) {
-        printf("%d ", current->data);
+        
+        if (current->link == NULL) last = 1;
+        
+        if (!last) {
+            printf("%d -> ", current->data);
+        } else {
+            printf("%d", current->data);
+        }
+        
     }
 }
 
