@@ -185,3 +185,115 @@ int main() {
     return 0;
 }
 ```
+
+## PROGRAMIZ LINKED LISTS CODE W/ BUBBLE SORTING
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node *link;
+};
+
+void createList(struct Node *head) {
+    head->data = 200;
+    head->link = malloc(sizeof(struct Node));
+
+    struct Node *n2 = head->link;
+    n2->data = 400;
+    n2->link = malloc(sizeof(struct Node));
+
+    struct Node *n3 = n2->link;
+    n3->data = 100;
+    n3->link = malloc(sizeof(struct Node));
+
+    struct Node *n4 = n3->link;
+    n4->data = 500;
+    n4->link = malloc(sizeof(struct Node));
+
+    struct Node *n5 = n4->link;
+    n5->data = 300;
+    n5->link = NULL;
+}
+
+int getLength(struct Node *head) {
+    int len = 0;
+    struct Node *curr = head;
+    while (curr != NULL) {
+        len++;
+        curr = curr->link;
+    }
+    return len;
+}
+
+struct Node *sortList(struct Node *head) {
+    struct Node *currNode = head;
+    int len = getLength(head);
+    int itr = 0;
+    int swapped;
+
+    while (itr < len) {
+        struct Node *traverseNode = head;
+        struct Node *prevNode = head;
+        swapped = 0;
+
+        while (traverseNode->link != NULL) {
+
+            struct Node *ptr = traverseNode->link;
+            if (traverseNode->data > ptr->data) {
+                swapped = 1;
+                if (traverseNode == head) {
+
+                    traverseNode->link = ptr->link;
+                    ptr->link = traverseNode;
+                    prevNode = ptr;
+                    head = prevNode;
+                }
+                else {
+
+                    traverseNode->link = ptr->link;
+                    ptr->link = traverseNode;
+                    prevNode->link = ptr;
+                    prevNode = ptr;
+                }
+                continue;
+            }
+            prevNode = traverseNode;
+            traverseNode = traverseNode->link;
+        }
+
+        if (!swapped) {
+            break;
+        }
+
+        ++itr;
+    }
+
+}
+
+void printList(struct Node *head) {
+    int last = 0;
+    for (struct Node *current = head; current != NULL; current = current->link) {
+        
+        if (current->link == NULL) last = 1;
+        
+        if (!last) {
+            printf("%d -> ", current->data);
+        } else {
+            printf("%d", current->data);
+        }
+        
+    }
+}
+
+int main() {
+    struct Node *head = malloc(sizeof(struct Node));
+
+    createList(head);
+    sortList(head);
+    printList(head);
+
+    return 0;
+}
+```
