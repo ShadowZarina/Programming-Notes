@@ -65,15 +65,15 @@ Insertion Sort
 
 void insertionSort(int arr[], int n) {
     int i, key, j;
-    for (i = 1; i < n; i++) {
+    for (i = 1; i < n; i++) {       // i = 1; i < n
         key = arr[i]; // Store the current element
         j = i - 1;
 
         // Move elements of arr[0..i-1], that are greater than key, 
         // to one position ahead of their current position
-        while (j >= 0 && arr[j] > key) {
+        while (j >= 0 && arr[j] > key) {       // j >= 0 & arr[j] > key
             arr[j + 1] = arr[j];
-            j = j - 1;
+            j -= 1;
         }
         arr[j + 1] = key;
     }
@@ -84,10 +84,10 @@ Selection Sort
 
 void selectionSort(int arr[], int n) {
     int i, j, min_idx, temp;
-    for (i = 0; i < n - 1; i++) {
+    for (i = 0; i < n - 1; i++) {       // i = 0; i < n - 1
         min_idx = i;
         // Find the minimum element in the unsorted part
-        for (j = i + 1; j < n; j++) {
+        for (j = i + 1; j < n; j++) {       // j = i + 1; j < n
             if (arr[j] < arr[min_idx]) {
                 min_idx = j;
             }
@@ -104,9 +104,9 @@ Bubble Sort
 void bubbleSort(int arr[], int n) {
     int i, j, temp;
     // Outer loop controls the number of passes
-    for (i = 0; i < n - 1; i++) {
+    for (i = 0; i < n - 1; i++) {       // i = 0; i < n - 1
         // Inner loop compares adjacent elements
-        for (j = 0; j < n - i - 1; j++) {
+        for (j = 0; j < n - i - 1; j++) {       // j = 0; i < n - i - 1
             // Swap if the element on the left is greater than the element on the right
             if (arr[j] > arr[j + 1]) {
                 temp = arr[j];
