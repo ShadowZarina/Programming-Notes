@@ -1,0 +1,221 @@
+// ---- PROBLEM 1: STACK FOR MATHEMATICAL EXPRESSIONS ----
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+
+#define MAX 100
+
+// Stack for Characters
+struct CharStack {
+    char values[MAX];
+    int top;
+};
+
+// Stack for nNmbers (Operands/Results)
+struct NumStack {
+    float values[MAX];
+    int top;
+};
+
+// Stack Functions (Push, Pop)
+
+void pushChar(struct CharStack *s, char val) {
+    if (s->top < MAX - 1) s->values[++(s->top)] = val;
+}
+
+char popChar(struct CharStack *s) {
+    if (s->top == -1) return '\0'; 
+    return s->values[(s->top)--];
+}
+
+void pushNum(struct NumStack *s, float val) {
+    if (s->top < MAX - 1) s->values[++(s->top)] = val;
+}
+
+float popNum(struct NumStack *s) {
+    if (s->top == -1) return 0; 
+    return s->values[(s->top)--];
+}
+
+// Math Logic
+
+int precedence(char op) {
+    if (op == '+' || op == '-') return 1;
+    if (op == 'x' || op == '*' || op == '/') return 2;
+    return 0;
+}
+
+float applyOp(float a, float b, char op) {
+    switch (op) {
+        case '+': return a + b;
+        case '-': return a - b;
+        case 'x': 
+        case '*': return a * b;
+        case '/': 
+            if (b == 0) return 0;
+            return a / b;
+    }
+    return 0;
+}
+
+// Math Expression Solving
+
+void evaluateExpression(char* exp) {
+    struct NumStack values = {.top = -1};
+    struct CharStack ops = {.top = -1};
+
+    for (int i = 0; i < strlen(exp); i++) {
+        if (exp[i] == ' ' || exp[i] == '\r' || exp[i] == '\n') continue;
+
+        if (isdigit(exp[i])) {
+            float val = 0;
+            while (i < strlen(exp) && isdigit(exp[i])) {
+                val = (val * 10) + (exp[i] - '0');
+                i++;
+            }
+            pushNum(&values, val);
+            i--; 
+        } 
+        else if (exp[i] == '(') {
+            pushChar(&ops, exp[i]);
+        } 
+        else if (exp[i] == ')') {
+    
+            while (ops.top != -1 && ops.values[ops.top] != '(') {
+                float val2 = popNum(&values);
+                float val1 = popNum(&values);
+                char op = popChar(&ops);
+                float res = applyOp(val1, val2, op);
+                pushNum(&values, res);
+                printf("Step (Solve): %.2f %c %.2f = %.2f\n", val1, op, val2, res);
+            }
+            popChar(&ops);
+        } 
+        else {
+            while (ops.top != -1 && precedence(ops.values[ops.top]) >= precedence(exp[i])) {
+                float val2 = popNum(&values);
+                float val1 = popNum(&values);
+                char op = popChar(&ops);
+                float res = applyOp(val1, val2, op);
+                pushNum(&values, res);
+                printf("Step (Solve): %.2f %c %.2f = %.2f\n", val1, op, val2, res);
+            }
+            pushChar(&ops, exp[i]);
+        }
+    }
+
+    while (ops.top != -1) {
+        char op = popChar(&ops);
+        if (op == '(') continue;
+        
+        float val2 = popNum(&values);
+        float val1 = popNum(&values);
+        float res = applyOp(val1, val2, op);
+        pushNum(&values, res);
+        printf("Final Step: %.2f %c %.2f = %.2f\n", val1, op, val2, res);
+    }
+
+    printf("\nFINAL ANSWER: %.2f\n", values.values[values.top]);
+}
+
+int main() {
+    char expression[MAX];
+    printf("Enter math expression (e.g., ((4 x 2) - 6) / (2 x 5)): ");
+    fgets(expression, MAX, stdin);
+    expression[strcspn(expression, "\n")] = 0;
+
+    evaluateExpression(expression);
+
+    return 0;
+}
+
+
+// ---- PROBLEM 2: CIRCULAR QUEUE ----
+
+#include <stdio.h>
+#define MAX 6
+
+typedef struct {
+    int arr[MAX];
+    int front;
+    int rear;
+} Queue;
+
+
+void enqueue(Queue *q, int value) {
+    if ((q->rear + 1) % MAX == q->front) {
+        printf("Queue is full\n");
+        return;
+    }
+    q->arr[q->rear] = value;
+    q->rear = (q->rear + 1) % MAX;
+}
+
+void dequeue(Queue *q) {
+    if (q->front == q->rear) {
+        printf("Queue is empty\n");
+        return;
+    }
+    printf("Dequeued: %d\n", q->arr[q->front]);
+    q->front = (q->front + 1) % MAX;
+}
+
+
+void peek(Queue *q) {
+    if (q->front == q->rear) {
+        printf("Queue is empty\n");
+        return;
+    }
+    printf("Front element: %d\n", q->arr[q->front]);
+}
+
+void show(Queue *q) {
+    if (q->front == q->rear) {
+        printf("Queue is empty\n");
+        return;
+    }
+
+    printf("Current Queue: ");
+    int i = q->front;
+    while (i != q->rear) {
+        printf("%d ", q->arr[i]);
+        i = (i + 1) % MAX;
+    }
+    
+}
+
+int main() {
+    Queue q;
+    int choice, value;
+
+    q.front = 0;
+    q.rear = 0;
+
+    while (1) {
+        printf("\nMENU\n1. Enqueue\n2. Dequeue\n3. Peek\n4. Show\n5. Exit\nEnter a choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter a value to enqueue: ");
+                scanf("%d", &value);
+                enqueue(&q, value);
+                break;
+            case 2:
+                dequeue(&q);
+                break;
+            case 3:
+                peek(&q);
+                break;
+            case 4:
+                show(&q);
+                break;
+            case 5:
+                return 0;
+            default:
+                printf("Invalid choice!\n");
+        }
+    }
+}
