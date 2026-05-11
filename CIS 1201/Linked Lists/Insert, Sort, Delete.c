@@ -1,3 +1,5 @@
+// ADDITIONAL TASK: Do this from scratch and WITHOUT using show/print functions
+
 #include <stdio.h>
 #include <stdlib.h>
 
