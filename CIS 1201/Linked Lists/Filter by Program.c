@@ -106,6 +106,7 @@ LIST filterProgram(LIST head, char program[]) {
 int main() {
 
     LIST head = NULL;
+    char filter[5];
 
     /* EXISTING LIST */
     insertEnd(&head, "Andrea", "BSCS", 1);
@@ -116,12 +117,15 @@ int main() {
 
     printf("=== ORIGINAL LIST ===\n\n");
     displayList(head);
-
+    
+    printf("\nWhich program would you like to filter by? ");
+    scanf("%4s", &filter);
+    
     /* FILTERED LIST */
-    LIST filteredBSCS = filterProgram(head, "BSCS");
+    LIST filtered = filterProgram(head, filter);
 
-    printf("\n=== FILTERED LIST (BSCS) ===\n\n");
-    displayList(filteredBSCS);
+    printf("\n=== FILTERED LIST (%s) ===\n\n", filter);
+    displayList(filtered);
 
     return 0;
 }
