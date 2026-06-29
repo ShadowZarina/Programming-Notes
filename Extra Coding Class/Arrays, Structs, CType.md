@@ -1,19 +1,16 @@
-#Prog Tutorial
+# ARRAY OPERATIONS
 
-
-## ARRAY OPERATIONS
-
-
-SEARCHING = Linear & Binary
+## SEARCHING 
+= Linear & Binary
 
 The main difference between linear search and binary search is that linear search checks each element sequentially and works on any list, while binary search repeatedly halves the search space and requires the data to be sorted. Binary search is significantly faster for large datasets.
 
 Binary Search = get range, split in 2, repeat
 
-INSERTING
+## INSERTING
 = shift elements, then insert in position
 
-DELETING
+## DELETING
 
 Two ways to handle this:
 1. NULL value = -1 for example
@@ -21,21 +18,21 @@ Two ways to handle this:
 	- use a size–; OR realloc(array, size-1);
 
 
-SORTING
+## SORTING
 1. Bubble
 2. Insertion
 3. Selection
 
 
-BUBBLE SORT
+### BUBBLE SORT
 - Time complexity = O(n^2) worst case ; O(n) best case
 - Space complexity = O(1)
 
-Big O notation 
+## Big O notation 
 - O(1) is constant (always same time)
 - n scales with number of elements (needs to traverse at least once)
 - O(n) usually signifies a DOUBLE LOOP
-
+```
 Void bubbleSort(int arr[], int n) 
 	For (int i = 0; i < n; i++)
 		For (int j = 0; j < n - i - 1; j++)
@@ -43,9 +40,9 @@ Void bubbleSort(int arr[], int n)
 				Int temp = arr[j];  (the smallest element or BUBBLE goes up)
 				Arr[j] = arr[j + 1];
 				Arr[j + 1] = temp;
+```
 
-
-SELECTION SORT
+### SELECTION SORT
 
 - looks for biggest/smallest element and swaps it with last unsorted element
 - takes a really long time
@@ -54,21 +51,27 @@ Time Complexity = O(n2) worst and best case
 Space Complexity = O(1) 
 
 
-INSERTION SORT
+### INSERTION SORT
 
 Time Complexity = O(n2) worst and O(n) best case
 Space Complexity = O(1) 
 
 
-## STRUCTS
+# STRUCTS
 
 Strcpy = used to copy string into struct element
 
 Typdef int x;
 X x 
 
+## WHEN TO USE MULTIPLE STRUCTURES:
+Person -> name, ID, year
+Improper fractions
+Create new structures when:
+Ex. one for floats, one for integers
+One structure for fraction, one for whole number beside
 
-### CTYPE.H FUNCTIONS
+# CTYPE.H FUNCTIONS
 
 Character Classification
 isalnum(): Checks for an alphanumeric character (letter or digit).
@@ -88,12 +91,3 @@ Character Transformation
 tolower(): Converts an uppercase letter to its lowercase equivalent.
 toupper(): Converts a lowercase letter to its uppercase equivalent. 
 
-
-## Structures
-
-WHEN TO USE MULTIPLE STRUCTURES:
-Person -> name, ID, year
-Improper fractions
-Create new structures when:
-Ex. one for floats, one for integers
-One structure for fraction, one for whole number beside
