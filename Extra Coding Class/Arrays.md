@@ -1,5 +1,5 @@
-/*
-
+# Array Syntax (Example 1)
+```
 void printScores(int scores[], int size) {
 	
 	int scores[5] = {75,60,85,99,100};   // scores here is the LOCATION of the array in the memory
@@ -28,23 +28,23 @@ void printScores(int scores[], int size) {
 	}
 	
 }
+```
 
+## Notes on Example 1
 we're not passing the array itself, but rather a REFERENCE to the FIRST ELEMENT
 
-PASS-BY REFERENCE = Reference the original variable
-PASS-BY COPY/VALUE = Duplicate of original variable's element is created & set to function
+**PASS-BY REFERENCE** = Reference the original variable
+**PASS-BY COPY/VALUE** = Duplicate of original variable's element is created & set to function
 
 bytes in an int = 4 bytes;
 
 
-
-SAMPLE ARRAY
+# SAMPLE ARRAY (EXAMPLE 2)
 
 Array name = scores
 
 75 in A100 <- 60 in A10A <- 85 in A10B <- 99 in A10C <- 100 in A10D 
 and size = 5 (B100 to B104 [counting 100,101,102,103,104])
-
 
 int scores = []; or int *scores (dynamically allocated)  ->  SAME MEANING THOUGH
 
@@ -60,19 +60,15 @@ scores[i] = scores[0],1,2,3,4
 output = 75,60,85,99,100
 i < size = stops when i reaches 4
 
-*/
 
-/*
 	scores[] == int *scores  (let the function see the list)   -->  BRACES & ASTERISKS SHARE THE SAME FUNCTION
 	-- if using scores[i], C jumps to the right spot using ADDRESS + position
 	
 	Array is a POINTER since it can POINT to specific spots in the array.
 
 	NOTE: You can't simply RETURN a whole array since regular ("local") arrays disappear right after the function finishes
-*/
 
-
-
+```
 int *list = makeList(5);   OR
  
 int *makeList(int size) {
@@ -82,7 +78,7 @@ int *makeList(int size) {
 	}
 	return list;  // give back list  (the function returns an INTEGER POINTER)
 }
-
+```
 
 
 <stdlib.h> functions
