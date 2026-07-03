@@ -1,10 +1,9 @@
 # Array Syntax (Example 1)
+
 ```
 void printScores(int scores[], int size) {
 	
 	int scores[5] = {75,60,85,99,100};   // scores here is the LOCATION of the array in the memory
-	
-	*NOTE: You need to tell the function the array size as C does not automatically know where the end is.
 	
 	(function call): printScores(values, 5);
 	
@@ -12,23 +11,25 @@ void printScores(int scores[], int size) {
 	for (i = 0; i < size; i++) {
 		printf("%d\n", scores[i]);
 	}
-```	
+```
+
+*NOTE: You need to tell the function the array size as C does not automatically know where the end is.
 	
-	HOW TO ITERATE THROUGH LONG ARRAYS? -> Sentinel Values
+HOW TO ITERATE THROUGH LONG ARRAYS? -> Sentinel Values
 	
-	CATCHER VARIABLES = variables tht store the value RETURNED by a function
+CATCHER VARIABLES = variables tht store the value RETURNED by a function
 	
-	MALLOC = memory allocation; returns a pointer to allocate memory (size * sizeof(datatype)) ; needs <stdlib.h>
+MALLOC = memory allocation; returns a pointer to allocate memory (size * sizeof(datatype)) ; needs <stdlib.h>
 	
-	ex. {2,4,8,16,-1, GV, GV, GV, GV)
-	```
+```
+ex. {2,4,8,16,-1, GV, GV, GV, GV)
+
 	for (i = 0; scores[i] != -1; i++)
 	{
 		printf("%d", scores[i]);
 	}
-	```
-}
 ```
+
 
 ## Notes on Example 1
 we're not passing the array itself, but rather a REFERENCE to the FIRST ELEMENT
@@ -61,14 +62,15 @@ output = 75,60,85,99,100
 i < size = stops when i reaches 4
 
 
-	scores[] == int *scores  (let the function see the list)   -->  BRACES & ASTERISKS SHARE THE SAME FUNCTION
-	-- if using scores[i], C jumps to the right spot using ADDRESS + position
+scores[] == int *scores  (let the function see the list)   -->  BRACES & ASTERISKS SHARE THE SAME FUNCTION
+-- if using scores[i], C jumps to the right spot using ADDRESS + position
 	
-	Array is a POINTER since it can POINT to specific spots in the array.
+Array is a POINTER since it can POINT to specific spots in the array.
 
-	NOTE: You can't simply RETURN a whole array since regular ("local") arrays disappear right after the function finishes
+NOTE: You can't simply RETURN a whole array since regular ("local") arrays disappear right after the function finishes
 
 ```
+{
 int *list = makeList(5);   OR
  
 int *makeList(int size) {
