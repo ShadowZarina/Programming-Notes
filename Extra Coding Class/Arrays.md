@@ -12,7 +12,7 @@ void printScores(int scores[], int size) {
 	for (i = 0; i < size; i++) {
 		printf("%d\n", scores[i]);
 	}
-	
+```	
 	
 	HOW TO ITERATE THROUGH LONG ARRAYS? -> Sentinel Values
 	
@@ -21,12 +21,12 @@ void printScores(int scores[], int size) {
 	MALLOC = memory allocation; returns a pointer to allocate memory (size * sizeof(datatype)) ; needs <stdlib.h>
 	
 	ex. {2,4,8,16,-1, GV, GV, GV, GV)
-	
+	```
 	for (i = 0; scores[i] != -1; i++)
 	{
 		printf("%d", scores[i]);
 	}
-	
+	```
 }
 ```
 
