@@ -123,15 +123,14 @@ parameters (int c, int d):
 c = address of A120, value of 5
 d = address of A124, value of 6
 <<when greaterThan function is called, they receive values of x and y>>
-// c and d are not the same as x and y since they are in diff functions and areas, only the values get passed
+> c and d are not the same as x and y since they are in diff functions and areas, only the values get passed
 
 local:
 retVal = address of A128, will get the value of 0
--- the value of 0 gets transferred to the main function -> num gets value of 0
+> the value of 0 gets transferred to the main function -> num gets value of 0
 
 Once the value is transferred, the function will get closed entirely.
 > When the function gets executed a second time, the variable addresses can change
-}
 
 
 
