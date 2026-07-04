@@ -5,19 +5,22 @@
 for (initialization; condition; increment/decrement)
 
 ## WHILE LOOPS
-
+```
 int x = 0;   --> INITIALIZATION
 while (x <= 5) {   --> CONDITION
   printf("Hi\n");
   x++;   --> INCREMENT/DECREMENT
 }
+```
 
 ## DO-WHILE LOOPS
 
+```
 int x = 1;
 do {
   printf("Hi\n";
 } while (x < 5);
+```
 
 # POINTERS
 
@@ -25,17 +28,19 @@ Analogy: Using a 3rd glass to transfer liquids between 2 glasses
 
 ### EXAMPLE 1:
 
+```
 int x = 5, y = 10;
 int z;  # Declare a new variable
 
 z = y; 
 y = x;
 x = z;
+```
 
 ### SAMPLE SOLUTION 1:
 
+```
 #include <stdio.h>
-
 
 int swap (int *x, int *y) {
     int z;
@@ -56,11 +61,13 @@ int main(){
     
     printf("%d is x, %d is y", x, y);
     return 0;
-} 
+}
+```
+
 # PASS THE ADDRESSES OF X AND Y TO THE FUNCTION, THE ACTUAL VARIABLES' VALUES WILL BE ALTERED
 
 ### EXAMPLE 2
-
+```
 #include <stdio.h>
 
 int main(){
@@ -75,7 +82,8 @@ int main(){
     // %p prints the memory address of a pointer in HEXADECIMAL FORMAT
     
     return 0;
-
+}
+```
 /* OUTPUTS */
 5
 0x7ffd19d81720
@@ -90,18 +98,18 @@ int main(){
 ### EXAMPLE 3 (Main and GreaterThan Function)
 
 A.R. (Activation Record) of int main() {
-
+```
 int x = 5, y = 6;
 num = greaterThan(x,y);
 printf("%d", num);
 }
-
+```
 ----
 x = address of A100, is given value of 5
 y = address of A104, is given value of 6
 num = address of A108
 ----
-
+```
 A.R. (Activation Record) of greaterThan(int c, int d) {
 int retVal;
 if (c > d) {
@@ -110,12 +118,12 @@ if (c > d) {
   retVal = 0;
 }
 return retVal;
-
+```
 parameters (int c, int d):
 c = address of A120, value of 5
 d = address of A124, value of 6
 <<when greaterThan function is called, they receive values of x and y>>
-# c and d are not the same as x and y since they are in diff functions and areas, only the values get passed
+// c and d are not the same as x and y since they are in diff functions and areas, only the values get passed
 
 local:
 retVal = address of A128, will get the value of 0
