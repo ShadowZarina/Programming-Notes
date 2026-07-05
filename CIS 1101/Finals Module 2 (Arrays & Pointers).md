@@ -3,7 +3,7 @@
 = An array can have address of 1, the first element of the array has address of 2, and the second element will have 3.
 
 ## EXAMPLE 1:
-
+```
 #include<stdio.h>
 
 int main() {
@@ -32,12 +32,12 @@ int main() {
     
     return 0;
 }
-
+```
 # POINTERS
 - ints have 4 bytes, but POINTERS (even if they point to ints) have 8 bytes
 
 ## EXAMPLE 2:
-
+```
 #include<stdio.h>
 
 int swap(int *arr, int index1, int index2) {
@@ -72,10 +72,10 @@ int main() {
 
     return 0;
 }
-
+```
 
 ## EXAMPLE 3:
-
+```
 #include<stdio.h>
 
 float average(int *arr, int size) {
@@ -107,8 +107,9 @@ int main() {
     
     return 0;
 }
+```
 
-REMEMBER:
+# REMEMBER:
 - if the function is asking to return a POINTER:
     - typically when asking for max/min values
     - put asterisk before function name (eg. int *maxValue)
