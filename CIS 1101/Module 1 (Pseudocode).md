@@ -1,25 +1,25 @@
-ALGORITHMS
+# ALGORITHMS
 
-An algorithm is:
+## An algorithm is:
 - step-by-step procedure to solve a problem
 - a process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer.
 
-Representations of Algorithm
+# Representations of Algorithm
 1. Pseudocode
 2. Flowchart
 3. Program
 
-REPRESENTATIONS
+## REPRESENTATIONS
 
-Pseudocode
+### Pseudocode
 - step by step instructions written in English like statements
-Flowchart
+### Flowchart
 - diagram showing all the steps in a logical sequence
-Program
+### Program
 - sequence of instructions written based on the rules of given programming langauge
 
-PSEUDOCODE PROBLEMS
-A. Write a pseudocode to compute and display avergae of two inputted numbers
+# PSEUDOCODE PROBLEMS
+## A. Write a pseudocode to compute and display avergae of two inputted numbers
 1. Input 1st number
 2. Input 2nd number
 3. Get sum by adding the numbers
@@ -28,20 +28,20 @@ A. Write a pseudocode to compute and display avergae of two inputted numbers
 
 Steps 1 and 2 are input, steps 3 and 4 are process, step 5 is output
 
-B. Write a pseudocode to compute and display avergae of two inputted variables
+## B. Write a pseudocode to compute and display avergae of two inputted variables
 1. Input X
 2. Input Y
 3. S gets the sum by adding the numbers
 4. Ave gets the average by dividing sum by 2
 5. Display Ave
 
-C. Compute perimeter of a rectangle
+## C. Compute perimeter of a rectangle
 1. Input L
 2. Input W
 3. 2L + 2W = P
 4. Output P
 
-D1. Integral Average is Odd or Even (with words)
+## D1. Integral Average is Odd or Even (with words)
 1. Input the value of X
 2. Input the value of Y
 3. S gets the sum of X and Y
@@ -51,7 +51,7 @@ D1. Integral Average is Odd or Even (with words)
   Then Print "The average is even"
   Else Print "The average is odd"
 
-D2. Integral Average is Odd or Even (with operators)
+## D2. Integral Average is Odd or Even (with operators)
 1. Input X
 2. Input Y
 3. S = X + Y
@@ -62,28 +62,28 @@ D2. Integral Average is Odd or Even (with operators)
   Else Print "The average is odd"
 
 
-3 MAJOR OPERATIONS -> input, process, output
+# 3 MAJOR OPERATIONS -> input, process, output
 
-Variable
+# Variable
 - container that can hold a value that may change
 - can be represented by a letter or series of letters/digits that SHOULD start with a letter
 
 
-TWO TYPES OF DIVISION
+# TWO TYPES OF DIVISION
 
-1. Integer Division
+## 1. Integer Division
 - operands are integers & quotient is integer
 Examples: 7/2=3, 1/2 = 0
 
-2. Real/Float Division
+## 2. Real/Float Division
 - operands & quotient are real numbers
 Examples: 7.0/2.0 = 3.5, 1.0/2.0 = 0.5
 
 
 
-MATHEMATICAL OPERATORS
+# MATHEMATICAL OPERATORS
 
-A. Arithmetic Operators
+## A. Arithmetic Operators
 1. Division, Modulo & Multiplication Group
 - Division = slash
 - Modulo = per cent  (remainder of division operation)
@@ -94,7 +94,7 @@ A. Arithmetic Operators
 - Subtraction = dash/hyphen
 
 
-ASSIGNMENT AND RELATIONAL OPERATORS
+# ASSIGNMENT AND RELATIONAL OPERATORS
 1. Assignment = equal symbol
 2. Relational Operators ( for comparing numbers )
 -- Less than, greater than, equality (==), not equal (!=), less/greater than or equal to
@@ -102,7 +102,7 @@ ASSIGNMENT AND RELATIONAL OPERATORS
 = is for assignment, == is for comparing
 
 
-LOGICAL OPERATORS
+# LOGICAL OPERATORS
 (precedence and associativity)
 
 1. Logical Negation 
@@ -116,14 +116,14 @@ Both sides of && MUST BE TRUE ;  if one is false, the end result is FALSE.
 Any side of || can be TRUE for the end result to be TRUE.
 
 
-STARTING NOW: PSEUDOCODES MUST BE WRITTEN USING:
+# STARTING NOW: PSEUDOCODES MUST BE WRITTEN USING:
 1. Line numbers,
 2. Variables, and
 3. Operators (the ones discussed)
 
 
-REPEATING STATEMENTS
-*WHILE LOOPS IN PSEUDOCODE*
+# REPEATING STATEMENTS
+## *WHILE LOOPS IN PSEUDOCODE*
 
 Example: 
 A.
@@ -135,17 +135,17 @@ A.
 *Note: Do not use ≤ (this is only for math); use <= instead.
 
 
-3 TYPES OF STATEMENTS
+# 3 TYPES OF STATEMENTS
 
-1. Composition (Sequence)
+## 1. Composition (Sequence)
 - Sequence of statements are executed in order of appearance
 = Average of 2 numbers
 
-2. Alternation (Selection)
+## 2. Alternation (Selection)
 - 2 sequences of statements may form alternatives so that only 1 ALTERNATIVE IS EXECUTED
 = Check if number is even or odd
 
-3. Iteration (Repetition)
+## 3. Iteration (Repetition)
 - sequence of statements that may be executed repeatedly (0 or more times - 0 meaning execution may be omitted altogether)
 = Displaying from 1 to N
 
