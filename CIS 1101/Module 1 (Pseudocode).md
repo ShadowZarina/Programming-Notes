@@ -149,10 +149,10 @@ A.
 - sequence of statements that may be executed repeatedly (0 or more times - 0 meaning execution may be omitted altogether)
 = Displaying from 1 to N
 
-ALTERNATION
+### ALTERNATION
 - If-then & If-else ; Switch
 
-ITERATION
+### ITERATION
 - For ; While ; Do-While
 
 1. If-Then Statement
@@ -167,7 +167,7 @@ c. If true, statement/s UNDER If-Then will be executed.
 
 -----
 
-BONUS QUESTIONS:
+# BONUS QUESTIONS:
 - Chicken nuggets
 - Aerospace engineering
 - Dennis M. Ritchie, 1972
