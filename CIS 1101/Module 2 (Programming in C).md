@@ -1,17 +1,17 @@
-VARIABLES
+# VARIABLES
 - named memory location
 - used to store data
 - value of which can be changed, used, or reused
 = Syntax: data_type variable_name;
 
-EXAMPLE:
+## EXAMPLE:
 
 int x;
 int num;
 
 1 byte = 8 bits
 
-IDENTIFIERS [RULES]
+# IDENTIFIERS [RULES]
 - can have letters, numbers, underscores
 1. The first character MUST be an alphabetic character or underscore
 2. You cannot use keywords as names (eg. while, if)
@@ -25,7 +25,7 @@ IDENTIFIERS [RULES]
 7. No special characters (eg. $,#)
 
 
-DATA TYPES
+# DATA TYPES
 1. int
 - variables with numeric/integer values without fractional parts
 2. float
@@ -44,11 +44,11 @@ float = 8 bytes
 double = 8 bytes
 char = 1 byte
 
-When to use float vs double?
+**When to use float vs double?**
 - Float is the default (especially for smaller programs)
 - Double is used for larger quantities
 
-TYPE MODIFIERS
+# TYPE MODIFIERS
 1. unsigned (always positive)
 - restricts the data type to storing only non-negative (zero and positive) values, effectively doubling the range of positive numbers it can store
 2. signed
@@ -59,17 +59,17 @@ TYPE MODIFIERS
 - increases the storage size of an integer type, allowing it to hold a larger range of values
 
 
-CONSTANTS
+# CONSTANTS
 - fixed value entities that do not change their values throughout program execution
 - CAN'T BE MODIFIED once defined
 - syntax: const data-type identifier-type value;
 
-const vs #define
+# const vs #define
 - CONST: recommended approach for defining constants in C due to its type safety & scoping benefits
 - #DEFINE: reserved for specific use cases like macros and conditional compilation
 
 
-CHARACTER SET
+# CHARACTER SET
 1. Source Character Set
 - set of characters that may be used in C source code
 - all letters, digits, and special characters
