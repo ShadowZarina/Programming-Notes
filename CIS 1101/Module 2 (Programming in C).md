@@ -5,10 +5,10 @@
 = Syntax: data_type variable_name;
 
 ## EXAMPLE:
-
+```
 int x;
 int num;
-
+```
 1 byte = 8 bits
 
 # IDENTIFIERS [RULES]
@@ -78,7 +78,7 @@ char = 1 byte
 = \a, \', \", \n
 
 
-COMPONENTS OF A PROGRAM
+# COMPONENTS OF A PROGRAM
 1. Documentation  (file name, description, author, date, place)
 2. Link  (header files)
 3. Definition  (#define)
@@ -90,14 +90,14 @@ COMPONENTS OF A PROGRAM
 7. User-Defined Function Definition  (create own functions)
 
 
-ARITHMETIC EXPRESSIONS
+# ARITHMETIC EXPRESSIONS
 - Operator Precedence (applies PEMDAS)
 = *, /, % have higher precedence over + and - 
 - Operator Associativity
 = program goes from left to right (for operators with same precedence)
 
 
-OPERATORS
+# OPERATORS
 1. Unary 
    -,+,--,++,!, sizeof, typeof
 2. Arithmetic
@@ -113,11 +113,8 @@ OPERATORS
 7. Ternary
    condition ? expression1 : expression2
 
-REFERENCE FOR ALL OPERATOR PRECEDENCE (already in Canvas)
-https://www.codingeek.com/tutorials/c-programming/precedence-and-associativity-of-operators-in-c/
 
-
-OPERATORS PRECEDENCE
+# OPERATORS PRECEDENCE
 
 1.)  (), [], ++, --
 (LEFT TO RIGHT)
@@ -143,46 +140,48 @@ x+1
 - prefix changes BEFORE program operates/outputs
 - postfix changes AFTER
 
+## REFERENCE FOR ALL OPERATOR PRECEDENCE (already in Canvas)
+https://www.codingeek.com/tutorials/c-programming/precedence-and-associativity-of-operators-in-c/
 
 -----------
 
 
-CHARACTERS
+# CHARACTERS
 
-One char has 1 byte of storage.
-Number of combinations = 2^n where n = number of digits
+- One char has 1 byte of storage.
+- Number of combinations = 2^n where n = number of digits
 
-Example:
+## Example:
 char x; -> 1 byte -> 8 bits
 
 1 bit = 1, 0   -> 2 = 2^1
 2 bits = 11, 10, 01, 00   -> 4 = 2^2
 3 bits = 000, 001, 010, 011, 100, 101, 110, 111  -> 8 = 2^3
 
-Example 2:
+## Example 2:
 int y; -> unsigned int -> 4 bytes or 32 bits
 
-RANGE:
+# RANGE:
 Formula: 2^n-1 to ((2^n-1) -1) where n = number of bits 
 
 2^32 / 2^1 = 2^31
 -2^31 to (2^31 - 1)
 
 
-ACTUAL CODING SYNTAX:
+# ACTUAL CODING SYNTAX:
 
 scanf
 - Format: scanf("format specifier", ADDRESS of variable);
 printf
 - Format: printf("format specifier, variable);
 
-Syntax vs. Conventions
+# Syntax vs. Conventions
 - Syntax = rules on how code works
 = Ex. variable names = data_type var_name;
 - Convention = ways to make coding cleaner
 
 
-CONTROL STRUCTURES
+# CONTROL STRUCTURES
 
 Control structures in C manage program execution flow, guiding which code runs and in what order. 
 They are broadly categorized into three main types: 
