@@ -1,11 +1,11 @@
-QUEUE - LILO/FIFO
+# QUEUE - LILO/FIFO
 
 -------
 
-# PROBLEM 1
+## PROBLEM 1
 
 ### CODE
-
+```
 #include <stdio.h>
 
 #define MAX 10
@@ -113,10 +113,10 @@ int main() {
 
     return 0;
 }
-
+```
 
 ### OUTPUT
-
+```
 MENU
 1. Get number
 2. Get number Senior
@@ -125,7 +125,8 @@ MENU
 Enter your choice: 1
 
 Queue: 1 0 0 0 0 0 0 0 0 0 
-
+```
+```
 MENU
 1. Get number
 2. Get number Senior
@@ -134,7 +135,8 @@ MENU
 Enter your choice: 1
 
 Queue: 1 1 0 0 0 0 0 0 0 0 
-
+```
+```
 MENU
 1. Get number
 2. Get number Senior
@@ -143,7 +145,8 @@ MENU
 Enter your choice: 1
 
 Queue: 1 1 1 0 0 0 0 0 0 0 
-
+```
+```
 MENU
 1. Get number
 2. Get number Senior
@@ -152,7 +155,8 @@ MENU
 Enter your choice: 2
 
 Queue: 1 1 1 2 0 0 0 0 0 0 
-
+```
+```
 MENU
 1. Get number
 2. Get number Senior
@@ -161,7 +165,8 @@ MENU
 Enter your choice: 3
 
 Queue: 1 1 1 0 0 0 0 0 0 0 
-
+```
+```
 MENU
 1. Get number
 2. Get number Senior
@@ -170,3 +175,4 @@ MENU
 Enter your choice: 3
 
 Queue: 0 1 1 0 0 0 0 0 0 0 
+```
