@@ -1,5 +1,5 @@
 ## SAMPLE PROBLEM 1 (DOT NOTATION)
-
+```
 #include <stdio.h>
 
 //make a structure fraction
@@ -26,6 +26,6 @@ int main() {
 
     return 0;
 }
-
-### OUTPUT
+```
+## OUTPUT
 50/100 + 15/30 = 1.00
