@@ -2,7 +2,6 @@
 
 FILO = first in last out
 
-
 ### PARTS/COMPONENTS OF A STACK
 - Size
 - Top/Last (last to enter stack)
@@ -15,10 +14,10 @@ FILO = first in last out
 
 --------------------------------------------------------------------------------
 
-### CODING EXAMPLE 1:
+# CODING EXAMPLE 1:
 
-### MAKE A PROGRAM WITH PUSH/POP/PEEK FUNCTIONS USING THE FF:
-
+## MAKE A PROGRAM WITH PUSH/POP/PEEK FUNCTIONS USING THE FF:
+```
 struct stack 
 {
   char values[20];
@@ -28,9 +27,9 @@ struct stack
 
 struct struct temp = {" ", 20, 0};
 // values are empty, size is 20, top is 0 (the value 0 will be pushed)
-
+```
 ### CODE
-
+```
 #include <stdio.h>
 
 // Stack
@@ -105,7 +104,7 @@ int main() {
         } 
     }
 }
-
+```
 
 --------------------------------------------------------------------------------
 
@@ -117,47 +116,47 @@ FIFO = first in first out
 
 --------------------------------------------------------------------------------
 
-### PROGRAM TO SOLVE COMPLEX MATH EQUATIONS
+## PROGRAM TO SOLVE COMPLEX MATH EQUATIONS
 
 1. Break down each character (parentheses included) and add them to a STACK one-by-one
 
-y = ((4 x 2) - 6) / (2 x 5)
+y = ((4 x 2) - 6) / (2 x 5)<br><br>
 
-)
-2
-x
-4
-(
-(
+)<br>
+2<br>
+x<br>
+4<br>
+(<br>
+(<br>
 
 2. Solve the first group
 
-temp1 = 4 x 2 = 8
+temp1 = 4 x 2 = 8<br>
 
 3. Rewrite the stack to include the value & remove parentheses; add the next characters
 
-)
-6
--
-8
-(
+)<br>
+6<br>
+-<br>
+8<br>
+(<br>
 
 4. Repeat this process UNTIL you have 2 values and 1 operator only
 
-temp1 = 8 - 6 = 2
+temp1 = 8 - 6 = 2<br>
 
-)
-5
-x
-2
-(
-/
-2
+)<br>
+5<br>
+x<br>
+2<br>
+(<br>
+/<br>
+2<br><br>
 
-temp1 = 2 x 5 = 10
+temp1 = 2 x 5 = 10<br>
 
-10
-/
-2
+10<br>
+/<br>
+2<br>
 
 temp1 = 2/10 = 0.2
