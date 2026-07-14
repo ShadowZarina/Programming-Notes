@@ -120,7 +120,7 @@ Andrea<br>
 ## CODE
 
 ### REFERENCE CODE 
-
+```
 #include <stdio.h>
 
 int main() {
@@ -149,9 +149,9 @@ int main(int argc, char *argv[]) {
 }
 
 */
-
+```
 ### FINAL CODE 
-
+```
 #include <stdio.h>
 
 int main() {
@@ -177,26 +177,26 @@ int main() {
     
     return 0;
 }
-
+```
 ### OUTPUT
 
-h - 0x7fff11e5685e
-e - 0x7fff11e56864
-l - 0x7fff11e5686a
-l - 0x7fff11e56870
-o - 0x7fff11e56876
+h - 0x7fff11e5685e<br>
+e - 0x7fff11e56864<br>
+l - 0x7fff11e5686a<br>
+l - 0x7fff11e56870<br>
+o - 0x7fff11e56876<br><br>
 
-1 - 0x7fff11e56840
-2 - 0x7fff11e56854
-3 - 0x7fff11e56868
-4 - 0x7fff11e5687c
-5 - 0x7fff11e56890
+1 - 0x7fff11e56840<br>
+2 - 0x7fff11e56854<br>
+3 - 0x7fff11e56868<br>
+4 - 0x7fff11e5687c<br>
+5 - 0x7fff11e56890<br><br>
 
-1.1 - 0x7fff11e56810
-2.2 - 0x7fff11e56838
-3.0 - 0x7fff11e56860
-4.0 - 0x7fff11e56888
-5.0 - 0x7fff11e568b0
+1.1 - 0x7fff11e56810<br>
+2.2 - 0x7fff11e56838<br>
+3.0 - 0x7fff11e56860<br>
+4.0 - 0x7fff11e56888<br>
+5.0 - 0x7fff11e568b0<br>
 
 
 
