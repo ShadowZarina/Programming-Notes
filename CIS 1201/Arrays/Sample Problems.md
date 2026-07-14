@@ -4,7 +4,7 @@
 - Send the array to another function using pointers, and print its elements there.
 
 ## INPUT:
-
+```
 #include <stdio.h>
 
 void printArray(int *array, int length) {
@@ -26,7 +26,7 @@ int main() {
 
     return 0;
 }
-
+```
 ## OUTPUT:
 
 Enter number 1: 7
@@ -50,7 +50,7 @@ Array number 5: 2
 - printString: prints input
 
 ## INPUT
-
+```
 void askForAString(char* buffer, int size) {
     printf("Enter a string: ");
     // fgets is safe because it limits input to 'size'
@@ -79,9 +79,12 @@ int main() {
     printString(string, length);
 
     return 0;
+```
 }
 
 ## OUTPUT
+Enter a string: apple
+The string is: apple
 
 Enter a string: Hello world
 
