@@ -29,17 +29,17 @@ int main() {
 ```
 ## OUTPUT:
 
-Enter number 1: 7
-Enter number 2: 4
-Enter number 3: 3
-Enter number 4: 5
-Enter number 5: 2
-
-Array number 1: 7
-Array number 2: 4
-Array number 3: 3
-Array number 4: 5
-Array number 5: 2
+Enter number 1: 7<br>
+Enter number 2: 4<br>
+Enter number 3: 3<br>
+Enter number 4: 5<br>
+Enter number 5: 2<br>
+<br>
+Array number 1: 7<br>
+Array number 2: 4<br>
+Array number 3: 3<br>
+Array number 4: 5<br>
+Array number 5: 2<br>
 
 ----------
 
@@ -83,9 +83,7 @@ int main() {
 }
 
 ## OUTPUT
-Enter a string: apple
-The string is: apple
-
-Enter a string: Hello world
-
+<br>
+Enter a string: Hello world<br>
+<br>
 The string is: Hello world
