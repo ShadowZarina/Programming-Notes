@@ -1,4 +1,6 @@
-1.  Pointers and Dynamic Arrays
+# MIDTERMS COVERAGE
+
+## 1.  Pointers and Dynamic Arrays
 - Pointers (definition, usage, passing/ returning to/from functions, pass-by-copy vs pass-by-address)
 - Arrays (definition, usage, passing/ returning to/from functions, pointer arithmetic and traversal by pointers vs index accessing)
 - Memory Management (malloc, calloc, realloc, free)
@@ -8,7 +10,7 @@
   = linear search
   = binary search [Optional] 
 
-2.  Program Structure and Libraries
+## 2.  Program Structure and Libraries
 - Header Files and C Files
 - C Libraries (string, ctype, stdlib, stdbool)
   = string.h  => String Functions:  strlen, strcpy, strcmp and General Copy function:  memcpy
@@ -17,7 +19,7 @@
   = stdlib.h  =>  Functions:  malloc, calloc, realloc, free 
 - User – defined libraries
 
-3.  Structure and Union
+## 3.  Structure and Union
 - Structures (members, size, declaration, named vs unnamed/anonymous, passing/returning to/from functions, manipulations, nested)
   = Creating custom types with structs and unions
 - Type definitions (typedef)
