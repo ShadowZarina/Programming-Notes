@@ -1,0 +1,39 @@
+# Example 1
+```
+printf("%d %d %d\n", z, z--, --z);
+```
+Initial state: z = 20. <br>
+
+## Evaluating from right to left:
+
+> --z (Rightmost): This is a prefix decrement. It subtracts 1 from z immediately. z becomes 19. The value passed to printf is 19.
+
+> z-- (Middle): This is a postfix decrement. It uses the current value of z (19) for the printf, and then subtracts 1.
+So, the value passed is 19, but z becomes 18.
+
+> z (Leftmost): The current value of z is now 18. The value passed is 18.
+
+Final Result: 18 19 19
+
+# Example 2 
+```
+printf("%p %p %p %d", ptr, --ptr, ptr--, *ptr--)
+```
+
+Again, evaluating from right to left:
+
+> *ptr-- (Rightmost): * It dereferences the current pointer to get the value (18).
+
+It then decrements the pointer. Since ptr is an int*, it moves back by 4 bytes (from ...7634 to ...7630).
+
+> ptr-- (Second from right): * It takes the current address (...7630).
+
+It decrements the pointer again by 4 bytes. ptr is now ...762c.
+
+> --ptr (Third from right): * This is a prefix decrement. It subtracts 4 bytes first. ptr becomes ...7628.
+
+It passes this new address.
+
+> ptr (Leftmost): * Passes the current final address: ...7628.
+
+Output: ...7628 ...7628 ...7630 18
