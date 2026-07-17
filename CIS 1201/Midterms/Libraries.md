@@ -1,25 +1,25 @@
 #  Header Files and C Files
 
 ## C Libraries (string, ctype, stdlib, stdbool)
-  = string.h  => String Functions:  strlen, strcpy, strcmp and General Copy function:  memcpy
-  = ctype.h  => Functions:  tolower, toupper, isdigit, isalpha, isalnum, islower, isupper   // Revisited (Discussed in Prog 
-  = stdbool  => Datatype:  bool  and values:  false/true
-  = stdlib.h  =>  Functions:  malloc, calloc, realloc, free 
-- User – defined libraries
-
+  = string.h  => String Functions:  strlen, strcpy, strcmp and General Copy function:  memcpy <br>
+  = ctype.h  => Functions:  tolower, toupper, isdigit, isalpha, isalnum, islower, isupper <br>
+  = stdbool  => Datatype:  bool  and values:  false/true <br>
+  = stdlib.h  =>  Functions:  malloc, calloc, realloc, free  <br>
+- User – defined libraries <br>
+ 
 ## Library Functions and Datatypes
 
 
 ### <string.h>: String & Memory Manipulation
-- Used for handling arrays of characters and raw memory blocks.
+- Used for handling arrays of characters and raw memory blocks. <br><br>
 
-= strlen(str): Returns the number of characters in a string (excluding the null terminator \0).
+= strlen(str): Returns the number of characters in a string (excluding the null terminator \0). <br>
 
-= strcpy(dest, src): Copies the content of src into dest.
+= strcpy(dest, src): Copies the content of src into dest. <br>
 
-= strcmp(s1, s2): Compares two strings. Returns 0 if they are equal.
-
-= memcpy(dest, src, n): Copies n bytes from memory area src to dest. Unlike strcpy, it doesn't stop at null terminators.
+= strcmp(s1, s2): Compares two strings. Returns 0 if they are equal. <br>
+ 
+= memcpy(dest, src, n): Copies n bytes from memory area src to dest. Unlike strcpy, it doesn't stop at null terminators. <br>
 
 ```
 char src[] = "Hello";
@@ -32,17 +32,17 @@ memcpy(dest, src, 5);           // Copies first 5 bytes
 ```
 
 ### <ctype.h>: Character Classification
-- Used to test or convert individual characters.
+- Used to test or convert individual characters. <br>
 
-= tolower / toupper: Converts a character to lowercase or uppercase.
+= tolower / toupper: Converts a character to lowercase or uppercase. <br>
 
-= isdigit: Checks if a character is 0-9.
+= isdigit: Checks if a character is 0-9. <br>
 
-= isalpha: Checks if a character is a letter (a-z, A-Z).
+= isalpha: Checks if a character is a letter (a-z, A-Z).<br>
 
-= isalnum: Checks if a character is alphanumeric (letter or digit).
+= isalnum: Checks if a character is alphanumeric (letter or digit).<br>
 
-= islower / isupper: Checks the casing of a letter.
+= islower / isupper: Checks the casing of a letter.<br>
 
 ```
 char c = 'a';
@@ -52,7 +52,7 @@ if (isalpha(c)) {
 ```
 
 ### <stdbool.h>: Boolean Logic
-- C originally used integers (0 and 1) for logic. This header introduces a formal boolean type.
+- C originally used integers (0 and 1) for logic. This header introduces a formal boolean type.<br>
 - bool: The datatype.
 - true / false: The values (internally mapped to 1 and 0).
 
@@ -66,15 +66,15 @@ if (!is_finished) {
 ```
 
 ### <stdlib.h>: Dynamic Memory Management
-- Essential for requesting memory from the heap during runtime.
+- Essential for requesting memory from the heap during runtime.<br><br>
 
-= malloc(size): Allocates a block of uninitialized memory.
+= malloc(size): Allocates a block of uninitialized memory.<br>
 
-= calloc(n, size): Allocates memory for n elements and initializes them all to zero.
+= calloc(n, size): Allocates memory for n elements and initializes them all to zero.<br>
 
-= realloc(ptr, size): Changes the size of a previously allocated memory block.
+= realloc(ptr, size): Changes the size of a previously allocated memory block.<br>
 
-= free(ptr): Releases allocated memory back to the system to prevent memory leaks.
+= free(ptr): Releases allocated memory back to the system to prevent memory leaks.<br>
 
 ```
 int *arr = malloc(5 * sizeof(int)); // Allocate space for 5 ints
