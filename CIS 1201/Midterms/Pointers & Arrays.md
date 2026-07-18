@@ -1,4 +1,4 @@
-# Pointers and Dynamic Arrays [COVERAGE]
+# POINTERS & DYNAMIC ARRAYS [COVERAGE]
 
 - **Pointers** (definition, usage, passing/ returning to/from functions, pass-by-copy vs pass-by-address)
 - **Arrays** (definition, usage, passing/ returning to/from functions, pointer arithmetic and traversal by pointers vs index accessing)
@@ -15,8 +15,12 @@
 
 # GUIDE
 
-## Pointers
-A pointer is a variable that stores the memory address of another variable.Definition & Usage: Defined using the * operator.Pass-by-Copy vs. Pass-by-Address:Copy: The function gets a duplicate of the value; original remains unchanged.Address: The function gets the memory location; changes affect the original variable.
+## 1. Pointers
+A pointer is a variable that stores the memory address of another variable.Definition & Usage: Defined using the * operator.
+- **Pass-by-Copy vs. Pass-by-Address:**
+- Copy: The function gets a duplicate of the value; original remains unchanged.
+- Address: The function gets the memory location; changes affect the original variable.
+
 ```
 void swap(int *a, int *b) { // Pass-by-address
     int temp = *a;
@@ -30,16 +34,34 @@ int main() {
     return 0;
 }
 ```
-2. Arrays & Pointer ArithmeticIn C, the name of an array is a pointer to its first element.Traversal: You can access elements using indices arr[i] or pointer arithmetic *(arr + i).Passing to Functions: Arrays are always passed by address (as a pointer).Cvoid printArray(int *arr, int size) {
+## 2. Arrays & Pointer Arithmetic
+In C, the name of an array is a pointer to its first element.Traversal: You can access elements using indices arr[i] or pointer arithmetic *(arr + i).Passing to Functions: Arrays are always passed by address (as a pointer).
+```
+void printArray(int *arr, int size) {
     for (int i = 0; i < size; i++) {
         // Pointer arithmetic: arr + i moves the pointer by i * sizeof(int)
         printf("%d ", *(arr + i)); 
     }
 }
-3. Dynamic Memory ManagementThis allows you to request memory from the Heap during runtime.FunctionDescriptionmalloc(size)Allocates a block of memory; contains garbage values.calloc(n, size)Allocates memory for n items and initializes them to zero.realloc(ptr, size)Resizes an existing memory block.free(ptr)Deallocates memory to prevent memory leaks.Cint *arr = (int*)malloc(5 * sizeof(int));
+```
+
+## 3. Dynamic Memory Management
+This allows you to request memory from the Heap during runtime.FunctionDescriptionmalloc(size)Allocates a block of memory; contains garbage values.calloc(n, size)Allocates memory for n items and initializes them to zero.realloc(ptr, size)Resizes an existing memory block.free(ptr)Deallocates memory to prevent memory leaks.
+```
+int *arr = (int*)malloc(5 * sizeof(int));
 arr = (int*)realloc(arr, 10 * sizeof(int)); // Resize to 10
 free(arr); // Clean up
-4. Array Operations: Search and SortSearching AlgorithmsLinear Search: Checks every element sequentially. (Time: $O(n)$)Binary Search: Requires a sorted array. Splits the search area in half repeatedly. (Time: $O(\log n)$)C// Binary Search Example
+```
+
+## 4. Array Operations: 
+### **Search and Sort**
+Searching Algorithms
+- Linear Search: Checks every element sequentially. (Time: $O(n)$)
+- Binary Search: Requires a sorted array. Splits the search area in half repeatedly. (Time: $O(\log n)$)C//
+
+```
+// Binary Search Example
+
 int binarySearch(int arr[], int n, int target) {
     int low = 0, high = n - 1;
     while (low <= high) {
@@ -50,7 +72,17 @@ int binarySearch(int arr[], int n, int target) {
     }
     return -1;
 }
-Elementary Sorting AlgorithmsSorting organizes data in a specific order (e.g., ascending).Bubble Sort: Repeatedly swaps adjacent elements if they are in the wrong order.Selection Sort: Finds the minimum element from the unsorted part and puts it at the beginning.Insertion Sort: Builds the final sorted array one item at a time by "inserting" elements into their correct position.C// Selection Sort Example
+```
+### Elementary Sorting Algorithms
+
+Sorting organizes data in a specific order (e.g., ascending).
+- Bubble Sort: Repeatedly swaps adjacent elements if they are in the wrong order.
+- Selection Sort: Finds the minimum element from the unsorted part and puts it at the beginning.
+- Insertion Sort: Builds the final sorted array one item at a time by "inserting" elements into their correct position.
+
+```
+// Selection Sort Example
+
 void selectionSort(int arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
         int min_idx = i;
@@ -74,9 +106,14 @@ void bubbleSort(int arr[], int n) {
                 arr[j+1] = temp;
             }
 }
+```
+# SUMMARY & EXAMPLES
+## 1 & 2. Pass by Copy vs. Pass by Address
+- Pass by Copy: Sends a duplicate. The original variable is untouched.
+- Pass by Address: Sends the memory location. The function can modify the original variable.
 
-
-1 & 2. Pass by Copy vs. Pass by AddressPass by Copy: Sends a duplicate. The original variable is untouched.Pass by Address: Sends the memory location. The function can modify the original variable.Cvoid modify(int copy, int *address) {
+```
+void modify(int copy, int *address) {
     copy = 100;      // Only changes the local duplicate
     *address = 100;  // Changes the actual variable in main
 }
@@ -87,7 +124,14 @@ int main() {
     printf("a: %d, b: %d", a, b); // Output: a: 10, b: 100
     return 0;
 }
-3 & 4. Traversal and Pointer ArithmeticPointer arithmetic allows you to navigate memory. Adding 1 to an int pointer moves it by 4 bytes (the size of an integer).Cint arr[] = {10, 20, 30};
+```
+
+## 3 & 4. Traversal and Pointer Arithmetic
+- Pointer arithmetic allows you to navigate memory.
+- Adding 1 to an int pointer moves it by 4 bytes (the size of an integer).
+- 
+```
+int arr[] = {10, 20, 30};
 int *p = arr; // Points to arr[0]
 
 for(int i = 0; i < 3; i++) {
@@ -98,14 +142,27 @@ Address: 0x7fff1 | Value: 10
 Address: 0x7fff5 | Value: 20
 Address: 0x7fff9 | Value: 30
 */
-5, 6 & 7. Dynamic Memory (malloc, calloc, realloc)FunctionUsageBest Used When...mallocint *p = malloc(n * sizeof(int));You need a block of memory quickly and will initialize it yourself.callocint *p = calloc(n, sizeof(int));You need the memory to be zero-initialized (cleared) automatically.reallocp = realloc(p, new_size);You already have a dynamic array but need it to be larger or smaller.Example:Cint *arr = malloc(2 * sizeof(int));   // Space for 2
+```
+## 5, 6 & 7. Dynamic Memory (malloc, calloc, realloc)
+- Sample Use of malloc: int *p = malloc(n * sizeof(int));<br>
+  = You need a block of memory quickly and will initialize it yourself.
+- Sample Use of calloc: int *p = calloc(n, sizeof(int));<br>
+  = You need the memory to be zero-initialized (cleared) automatically.reallocp = realloc(p, new_size);<br>
+  = You already have a dynamic array but need it to be larger or smaller.Example:Cint *arr = malloc(2 * sizeof(int));   // Space for 2
 arr[0] = 1; arr[1] = 2;
-
+- Sample Use of realloc:
+```
 arr = realloc(arr, 3 * sizeof(int));  // Resize for 1 more
 arr[2] = 3;
-
 free(arr);
-8 & 9. Searching: Linear vs. BinaryLinear: Works on any array. Checks one by one.Binary: Faster ($O(\log n)$), but requires the array to be sorted.C// Binary Search
+```
+## 8 & 9. Searching: Linear vs. Binary
+- Linear: Works on any array. Checks one by one.
+- Binary: Faster (O(log n)), but requires the array to be sorted.
+
+```
+// Binary Search
+
 int binary(int arr[], int size, int target) {
     int low = 0, high = size - 1;
     while (low <= high) {
@@ -116,7 +173,13 @@ int binary(int arr[], int size, int target) {
     }
     return -1; // Not found
 }
-10. Insertion SortBest for small datasets or arrays that are already "mostly sorted." It picks an element and "inserts" it into its correct spot in the sorted portion.Cvoid insertionSort(int arr[], int n) {
+```
+## 10. Insertion Sort
+- Best for small datasets or arrays that are already "mostly sorted."
+- It picks an element and "inserts" it into its correct spot in the sorted portion.
+  
+```
+void insertionSort(int arr[], int n) {
     for (int i = 1; i < n; i++) {
         int key = arr[i];
         int j = i - 1;
@@ -127,8 +190,12 @@ int binary(int arr[], int size, int target) {
         arr[j + 1] = key;
     }
 }
-
-11. Comprehensive Example: Search, Sort, TraversalThis program creates a dynamic array, sorts it, and searches for a value.C#include <stdio.h>
+```
+## 11. Comprehensive Example: Search, Sort, Traversal
+- This program creates a dynamic array, sorts it, and searches for a value.
+  
+```
+#include <stdio.h>
 #include <stdlib.h>
 
 int main() {
@@ -163,3 +230,4 @@ int main() {
     free(data);
     return 0;
 }
+```
