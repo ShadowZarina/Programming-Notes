@@ -1,22 +1,24 @@
-###  Pointers and Dynamic Arrays [COVERAGE]
+# Pointers and Dynamic Arrays [COVERAGE]
 
-- Pointers (definition, usage, passing/ returning to/from functions, pass-by-copy vs pass-by-address)
-- Arrays (definition, usage, passing/ returning to/from functions, pointer arithmetic and traversal by pointers vs index accessing)
+- **Pointers** (definition, usage, passing/ returning to/from functions, pass-by-copy vs pass-by-address)
+- **Arrays** (definition, usage, passing/ returning to/from functions, pointer arithmetic and traversal by pointers vs index accessing)
 
-- Memory Management (malloc, calloc, realloc, free)
+- **Memory Management** (malloc, calloc, realloc, free)
 
-- Array Operations (Search, Sort, and Traversal)
-- Elementary Sorting Algorithms (insertion, selection, bubble)
+- **Array Operations** (Search, Sort, and Traversal)
+- **Elementary Sorting Algorithms** (insertion, selection, bubble)
 
-- Searching Algorithms
+- **Searching Algorithms**
   = linear search
   = binary search [Optional] 
 
 
-### GUIDE
+# GUIDE
 
-
-. PointersA pointer is a variable that stores the memory address of another variable.Definition & Usage: Defined using the * operator.Pass-by-Copy vs. Pass-by-Address:Copy: The function gets a duplicate of the value; original remains unchanged.Address: The function gets the memory location; changes affect the original variable.Cvoid swap(int *a, int *b) { // Pass-by-address
+## Pointers
+A pointer is a variable that stores the memory address of another variable.Definition & Usage: Defined using the * operator.Pass-by-Copy vs. Pass-by-Address:Copy: The function gets a duplicate of the value; original remains unchanged.Address: The function gets the memory location; changes affect the original variable.
+```
+void swap(int *a, int *b) { // Pass-by-address
     int temp = *a;
     *a = *b;
     *b = temp;
@@ -27,6 +29,7 @@ int main() {
     swap(&x, &y); // Pass addresses using &
     return 0;
 }
+```
 2. Arrays & Pointer ArithmeticIn C, the name of an array is a pointer to its first element.Traversal: You can access elements using indices arr[i] or pointer arithmetic *(arr + i).Passing to Functions: Arrays are always passed by address (as a pointer).Cvoid printArray(int *arr, int size) {
     for (int i = 0; i < size; i++) {
         // Pointer arithmetic: arr + i moves the pointer by i * sizeof(int)
