@@ -1,5 +1,5 @@
 # VISUALIZATION
-https://visualgo.net/en/sorting?slide=1
+[Visualgo](https://visualgo.net/en/sorting?slide=1)
 
 - UNDERSTAND HOW THE ARRAY LOOKS AFTER EACH LOOP/ITERATION
 
@@ -18,7 +18,7 @@ Bubble, Insertion, and Selection sorts are comparison algorithms suitable for sm
 - Insertion Sort builds a sorted subarray by inserting elements. Insertion is generally the fastest for small/nearly sorted data. 
 
 
-Key Differences:
+## Key Differences:
 
 = Approach: 
 - Bubble Sort repeatedly bubbles the largest element to the end. 
@@ -39,10 +39,10 @@ Key Differences:
 
 
 ## INSERTION VS SELECTION SORT
-https://www.geeksforgeeks.org/dsa/difference-between-insertion-sort-and-selection-sort/
+[Difference Between Insertion Sort and Selection Sort](https://www.geeksforgeeks.org/dsa/difference-between-insertion-sort-and-selection-sort/)
 
 
-Insertion Sort
+### Insertion Sort
 - Inserts an element from the unsorted part into its correct position within the already sorted part.
 - Best case time: O(n) (when the array is already sorted)
 - Average/worst time: O(n²)
@@ -51,7 +51,7 @@ Insertion Sort
 - Generally performs better in practice, especially on small or partially sorted data
 
 
-Selection Sort
+### Selection Sort
 - Finds the minimum element in the unsorted part and swaps it with the first element of the unsorted part.
 - Best case time: O(n²) (always the same, regardless of input order)
 - Average/worst time: O(n²)
@@ -62,7 +62,7 @@ Selection Sort
 
 
 Insertion Sort
-
+```
 void insertionSort(int arr[], int n) {
     int i, key, j;
     for (i = 1; i < n; i++) {       // i = 1; i < n
@@ -78,10 +78,10 @@ void insertionSort(int arr[], int n) {
         arr[j + 1] = key;
     }
 }
-
+```
 
 Selection Sort
-
+```
 void selectionSort(int arr[], int n) {
     int i, j, min_idx, temp;
     for (i = 0; i < n - 1; i++) {       // i = 0; i < n - 1
@@ -98,9 +98,9 @@ void selectionSort(int arr[], int n) {
         arr[min_idx] = temp;
     }
 }
-
+```
 Bubble Sort
-
+```
 void bubbleSort(int arr[], int n) {
     int i, j, temp;
     // Outer loop controls the number of passes
@@ -116,3 +116,4 @@ void bubbleSort(int arr[], int n) {
         }
     }
 }
+```
