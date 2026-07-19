@@ -2,9 +2,7 @@
 
 - **Pointers** (definition, usage, passing/ returning to/from functions, pass-by-copy vs pass-by-address)
 - **Arrays** (definition, usage, passing/ returning to/from functions, pointer arithmetic and traversal by pointers vs index accessing)
-
 - **Memory Management** (malloc, calloc, realloc, free)
-
 - **Array Operations** (Search, Sort, and Traversal)
 - **Elementary Sorting Algorithms** (insertion, selection, bubble)
 
@@ -149,13 +147,17 @@ Address: 0x7fff9 | Value: 30
 ```
 ## 5, 6 & 7. Dynamic Memory (malloc, calloc, realloc)
 - Sample Use of malloc: int *p = malloc(n * sizeof(int));<br>
-  = You need a block of memory quickly and will initialize it yourself.
+  = You need a block of memory quickly and will initialize it yourself.<br>
 - Sample Use of calloc: int *p = calloc(n, sizeof(int));<br>
-  = You need the memory to be zero-initialized (cleared) automatically.reallocp = realloc(p, new_size);<br>
-  = You already have a dynamic array but need it to be larger or smaller.Example:Cint *arr = malloc(2 * sizeof(int));   // Space for 2
-arr[0] = 1; arr[1] = 2;
-- Sample Use of realloc:
+  = You need the memory to be zero-initialized (cleared) automatically.
+- Sample Use of realloc: realloc(p, new_size);<br>
+  = You already have a dynamic array but need it to be larger or smaller.
+
+Example:
 ```
+*arr = malloc(2 * sizeof(int));   // Space for 2
+arr[0] = 1; arr[1] = 2;
+
 arr = realloc(arr, 3 * sizeof(int));  // Resize for 1 more
 arr[2] = 3;
 free(arr);
