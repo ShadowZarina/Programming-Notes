@@ -46,7 +46,11 @@ void printArray(int *arr, int size) {
 ```
 
 ## 3. Dynamic Memory Management
-This allows you to request memory from the Heap during runtime.FunctionDescriptionmalloc(size)Allocates a block of memory; contains garbage values.calloc(n, size)Allocates memory for n items and initializes them to zero.realloc(ptr, size)Resizes an existing memory block.free(ptr)Deallocates memory to prevent memory leaks.
+This allows you to request memory from the Heap during runtime.
+- **malloc(size)** - Allocates a block of memory; contains garbage values.
+- **calloc(n, size)** - Allocates memory for n items and initializes them to zero.
+- **realloc(ptr, size)** - Resizes an existing memory block.
+- **free(ptr)** - Deallocates memory to prevent memory leaks.
 ```
 int *arr = (int*)malloc(5 * sizeof(int));
 arr = (int*)realloc(arr, 10 * sizeof(int)); // Resize to 10
@@ -76,9 +80,9 @@ int binarySearch(int arr[], int n, int target) {
 ### Elementary Sorting Algorithms
 
 Sorting organizes data in a specific order (e.g., ascending).
-- Bubble Sort: Repeatedly swaps adjacent elements if they are in the wrong order.
-- Selection Sort: Finds the minimum element from the unsorted part and puts it at the beginning.
-- Insertion Sort: Builds the final sorted array one item at a time by "inserting" elements into their correct position.
+- **Bubble Sort:** Repeatedly swaps adjacent elements if they are in the wrong order.
+- **Selection Sort:** Finds the minimum element from the unsorted part and puts it at the beginning.
+- **Insertion Sort:** Builds the final sorted array one item at a time by "inserting" elements into their correct position.
 
 ```
 // Selection Sort Example
@@ -109,8 +113,8 @@ void bubbleSort(int arr[], int n) {
 ```
 # SUMMARY & EXAMPLES
 ## 1 & 2. Pass by Copy vs. Pass by Address
-- Pass by Copy: Sends a duplicate. The original variable is untouched.
-- Pass by Address: Sends the memory location. The function can modify the original variable.
+- **Pass by Copy:** Sends a duplicate. The original variable is untouched.
+- **Pass by Address:** Sends the memory location. The function can modify the original variable.
 
 ```
 void modify(int copy, int *address) {
@@ -129,7 +133,7 @@ int main() {
 ## 3 & 4. Traversal and Pointer Arithmetic
 - Pointer arithmetic allows you to navigate memory.
 - Adding 1 to an int pointer moves it by 4 bytes (the size of an integer).
-- 
+  
 ```
 int arr[] = {10, 20, 30};
 int *p = arr; // Points to arr[0]
