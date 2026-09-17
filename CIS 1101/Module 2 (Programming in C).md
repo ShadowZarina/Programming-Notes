@@ -39,10 +39,10 @@ int num;
 - hold no value
 - void type functions will not return any value
 
-int = 4 bytes
-float = 8 bytes
-double = 8 bytes
-char = 1 byte
+int = 4 bytes<br>
+float = 8 bytes<br>
+double = 8 bytes<br>
+char = 1 byte<br>
 
 **When to use float vs double?**
 - Float is the default (especially for smaller programs)
