@@ -1,6 +1,6 @@
 # ARRAYS
 - Arrays have their own address; their code blocks/content will have their own addresses.
-= An array can have address of 1, the first element of the array has address of 2, and the second element will have 3.
+- An array can have address of 1, the first element of the array has address of 2, and the second element will have 3.
 
 ## EXAMPLE 1:
 ```
