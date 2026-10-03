@@ -3,7 +3,7 @@
 1. Print 1–100 Without Loops
 To avoid loops (for, while, do-while), we use recursion. The function calls itself with an incremented value until it hits the base case of 101.
 
-
+```
 #include <stdio.h>
 
 void printNumbers(int n) {
@@ -16,13 +16,13 @@ int main() {
     printNumbers(1);
     return 0;
 }
-
+```
 ------------------------
 
 2. Sort Array Without Brackets []
 
 In C, arr[i] is equivalent to *(arr + i). This solution uses pointer arithmetic to perform a bubble sort.
-
+```
 #include <stdio.h>
 
 void sortArray(int *ptr, int n) {
@@ -47,14 +47,14 @@ int main() {
     }
     return 0;
 }
-
+```
 ------------------------
 
 3. String Reverse Without strlen
 
 We first find the end of the string using a pointer, then swap characters from the outside in until the pointers meet in the middle.
 
-
+```
 #include <stdio.h>
 
 char *strrev(char *str) {
@@ -84,7 +84,7 @@ int main() {
     printf("Reversed: %s", strrev(myStr));
     return 0;
 }
-
+```
 ------------------------
 
 4. Return Array of Structures from a Function
@@ -92,7 +92,7 @@ int main() {
 In C, you cannot directly return a local array because it is destroyed when the function ends. 
 You must use dynamic memory allocation (malloc) so the data persists in the heap
 
-
+```
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -122,7 +122,8 @@ int main() {
     for (int i = 0; i < 2; i++) {
         printf("Name: %s, Age: %d\n", (group + i)->name, (group + i)->age);
     }
-
+}
+```
     free(group); // Always free dynamic memory
     return 0;
 }
